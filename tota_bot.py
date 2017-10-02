@@ -9,7 +9,6 @@ from telegram.ext import (CommandHandler, ConversationHandler, Filters,
                           MessageHandler, RegexHandler, Updater, JobQueue)
 from telegram import Update
 import telegram
-import timer
 import tota as mainf
 
 CHOOSING, TYPING_REPLY, TYPING_CHOICE, LOAD = range(4)
@@ -47,9 +46,7 @@ def start(bot, update):
                         )
                     return 
         return
-    t = threading.Thread(target=msgDispatcher)
-    t.start()
-    t.join()
+    
 @run_async   
 def setup(bot, update):
     update.message.reply_text(

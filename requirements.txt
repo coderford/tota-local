@@ -1,4 +1,1 @@
-python-telegram-bot
-lxml
-requests
-redis
+pkg-resources==0.0.0
