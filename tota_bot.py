@@ -31,8 +31,8 @@ def start(bot, update):
         lock = threading.Lock()
         with lock:
             chat_id = str(update.message.chat_id)
-            if chat_id in l:
-                update.message.reply_text("Exists")
+            if (chat_id in l) and (r.hget(chat_id,'umsReg')) and (r.hget(chat_id,'umsPass')):
+                update.message.reply_text('Welcome Back!',reply_markup = markup_options)
                 return
             else:
                     r.hmset(chat_id,data)
@@ -44,8 +44,9 @@ def start(bot, update):
                         "\n\nI am created by **Shekh Ataul**.\nA.K.A -- DEVIL!"
                         "\n\nTo Get Started Enter Command: \n/setup"
                         )
-                    return 
-        return
+                    return
+    msgDispatcher()
+    return
     
 @run_async   
 def setup(bot, update):
@@ -133,7 +134,7 @@ def dataUpdater(bot,job):
                         if item != '':
                             item = ('|').join(item)
                             if item == c.hget(chat_id,'msg'+str(i)):
-                                bot.send_message(chat_id=chat_id,text="Repeating...")
+                                pass
                             else:
                                 lock = threading.Lock()
                                 c.hset(chat_id,'msg'+str(i),item)
@@ -188,7 +189,7 @@ def main():
     updater.start_polling()
     j = updater.job_queue
     j.run_repeating(dataUpdater,interval=60,first=60)
-    return
+    
 
 main()
 

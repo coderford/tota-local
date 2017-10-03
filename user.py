@@ -5,7 +5,7 @@ import requests
 
 class Verto:
     '''
-    This class rcontains essential data to instantiate User's UMS Homepage Data Object.
+    This class contains essential data to instantiate User's UMS Homepage Data Object.
 
     Attributes::
 
