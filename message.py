@@ -1,9 +1,10 @@
 from lxml import html
+from base import Base
 import threading
 
 
 
-class Messages:
+class Message(Base):
     '''
     This class extract messages from `obj:lxml.tree` User's UMS Homepage Data Object 
     and returns all the messages in `obj:list` list.
@@ -27,8 +28,8 @@ class Messages:
         self.msgPath = ['//div[@id ="owl-demo"]/div/div[@class="Announcement_Subject"]/text()',
                             '//div[@id ="owl-demo"]/div/div[@class="Announcement_Name"]/text()',
                             '//div[@id ="owl-demo"]/div/div/div[@class="Announcement"]/text()']
-        self.msgExtractor(page_data,self.msgPath)
-    
+        self.pageData = page_data
+
     
     def dataExtractor(self,page_data,data_xpath,data_category):
         '''
@@ -63,5 +64,16 @@ class Messages:
             threads.start()
             threads.join()
         return None
+    
+    def initiater(self):
+        '''
+        This Method will instantiate a Messages instance and fetch the messages in a `obj:list` list.
+        
+        Args::
+
+        page_data (`class:lxml.html`): Represents an pre intialized instance of html tree object.
+        '''
+        self.msgExtractor(self.pageData,self.msgPath)
+        return self.mesgList                        
 
     
