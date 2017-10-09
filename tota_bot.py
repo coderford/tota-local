@@ -288,7 +288,7 @@ def res_download(bot, update):
         with lock:
             down = downInst.initiater(res_button)
             bot.send_message(text = down,chat_id=chat_id)
-            bot.send_document(chat_id=chat_id, document=open('downloads/{}'.format(down),'rb'))
+            bot.send_document(chat_id=chat_id, document=open('{}'.format(down),'rb'))
     
 def main():
     

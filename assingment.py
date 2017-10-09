@@ -137,7 +137,7 @@ class Resources(Base):
         self.finalToken = self.res_down_token(res_button_value)
         data = self.session.post(self.baseUrl,files=self.finalToken,stream=True)
         filename = cgi.parse_header(data.headers['content-disposition'])[-1]['filename']
-        with open('downloads/{}'.format(filename),'wb') as target:
+        with open('{}'.format(filename),'wb') as target:
             data.raw.decode_content = True
             shutil.copyfileobj(data.raw, target)
         return filename
