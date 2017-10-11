@@ -1,0 +1,1255 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_Head1"><title>
+	Student Marks View
+</title>
+
+    <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="js/jquery-ui.css" />
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+    <noscript>
+<div style="position: fixed; top: 0px; left: 0px; z-index: 3000;height: 100%; width: 100%; background-color: rgba(0,0,0,.6);padding-top:15%;text-align: center;font-family: Segoe, Segoe UI, DejaVu Sans, Trebuchet MS, Verdana,' sans-serif';font-size: 20px;">
+  <div style="display: inline-block;background-color:  rgba(255,255,255,.7);padding: 45px;-webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;"> <img src="login_images/ums_logo.png" alt=""/>
+    <hr style="border: solid 1px #ACACAC">
+    <p style="margin-left: 10px">JavaScript of your browser is not enabled.please enable it first to access UMS</p>
+    <p style="margin-left: 10px">How to enable Javascript : visit this link to step by step help </p>
+    <p style="margin-left: 10px"><a href="http://activatejavascript.org/en/instructions" style="background-color: #337ab7;border-bottom-color: #2e6da4;border-left-color: #2e6da4;border-right-color: #2e6da4;border-top-color: #2e6da4;color: #fff;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;padding: 5px 10px;text-decoration: none"> Click Here </a> </p>
+  </div>
+</div>
+</noscript>  
+
+    <style type="text/css">
+    .RadComboBoxDropDown .rcbItem > label, .RadComboBoxDropDown .rcbHovered > label, .RadComboBoxDropDown .rcbDisabled > label, .RadComboBoxDropDown .rcbLoading > label, .RadComboBoxDropDown .rcbCheckAllItems > label, .RadComboBoxDropDown .rcbCheckAllItemsHovered > label {
+    display:inline-block !important;
+    }
+   </style>
+
+    <link href="css/tabcontent.css" rel="stylesheet" type="text/css" /><link href="css/student_ums_style.css" rel="stylesheet" type="text/css" /><link href="css/owl.carousel.css" rel="stylesheet" type="text/css" />
+
+    <script src="js/owl.carousel.min.js" type="text/javascript"></script>
+
+    <script src="js/jquery.slimscroll.min.js" type="text/javascript"></script>
+
+    <style type="text/css">
+        .RadMenu_Sunset .rmRootGroup {
+            border: none;
+        }
+
+
+
+        .ui-dialog {
+            position: fixed !important;
+            z-index: 90;
+            top: 100px !important;
+        }
+
+            .ui-dialog .dialog-height {
+                height: auto !important;
+            }
+
+            .ui-dialog .ui-dialog-titlebar-close span {
+                background-image: url(Images/red_cross_icon.gif) !important;
+                background-repeat: no-repeat;
+            }
+            /* for Modal css*/
+        .ui-widget-overlay {
+            position: fixed;
+              opacity:0.8 !important;
+        }
+
+        .ui-front {
+            z-index: 1000;
+        }
+
+        .no-close .ui-dialog-titlebar-close {
+            display: none;
+        }
+        .disableClosedDialog
+        {
+             margin-left: 10px; 
+             background-color: none;
+             color: lightgray;
+             padding: 3px; 
+             cursor: default;
+             font-weight:normal;
+        }
+        .enableClosedialog
+        {
+             margin-left: 10px; 
+             background-color: lightgreen;
+             color: black;
+             padding: 3px; 
+             cursor: pointer;
+             font-weight:bold;
+        }
+    </style>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#owl-demo").owlCarousel({
+
+                navigation: true,
+                slideSpeed: 500,
+                paginationSpeed: 400,
+                singleItem: true,
+                autoPlay: 5000,
+                stopOnHover: true,
+
+                navigationText: ["&larr;", "&rarr;"],
+                // "singleItem:true" is a shortcut for:
+                // items : 1, 
+                // itemsDesktop : false,
+                // itemsDesktopSmall : false,
+                // itemsTablet: false,
+                // itemsMobile : false
+
+            });
+            $("#owl-demo2").owlCarousel({
+
+                navigation: true,
+                slideSpeed: 500,
+                paginationSpeed: 400,
+                singleItem: true,
+                autoPlay: 4000,
+                stopOnHover: true,
+
+                navigationText: ["&larr;", "&rarr;"],
+                // "singleItem:true" is a shortcut for:
+                // items : 1, 
+                // itemsDesktop : false,
+                // itemsDesktopSmall : false,
+                // itemsTablet: false,
+                // itemsMobile : false
+
+            });
+        });
+        var $buoop = {}
+        $buoop.ol = window.onload;
+        window.onload = function () {
+            try { if ($buoop.ol) $buoop.ol(); } catch (e) { }
+            var e = document.createElement("script");
+            e.setAttribute("type", "text/javascript");
+            e.setAttribute("src", "https://browser-update.org/update.js");
+            document.body.appendChild(e);
+        }
+    </script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+  m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-67701680-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+<link href="App_Themes/Blue/StyleSheet1.css" type="text/css" rel="stylesheet" /><link href="/LpuUms/WebResource.axd?d=hcXDZhXiidgsQUtEo5iT38OtL0ri9tzi0Yz_0wQvTr94vWgYc2GpxummIgPm4vAqFLu-1oh-oVjmdM__PgnIeKxQuCSXI8J7Rrf58QZkMlVa7DNNb2Y7CftiM8kkdS1S3nxiw9GwCwkXJBvijpZlC95wBCrDf--pSmP6i2n0QxA1&amp;t=636372190805536934" type="text/css" rel="stylesheet" /><link href="/LpuUms/WebResource.axd?d=vsKpXOsoEwDUfVug9KOqStgY82OdjjBzE-W2lNMc_xHCEZs4eImTUAEv_ehqTu1u9sTVndUS4B44Hfpb-rgK9bw2PSSBtKUqIviw0Dk9ALy5m61yMFwHJ-RDRne8qzPT0&amp;t=635881825220000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/LpuUms/WebResource.axd?d=gGPJcKA2egeNvbDi_oMTrT3B7k5VPKraC02LmzdO2u06I7zRxdARmIF0qMQF0MpZCJI4kiN5GtFhy32MTv2IZFz0O1OyZg2A3tus0rUqAcizertRj7eeIkxoB3U5MU50dz4lDeQpUP0O1L5DyRI2ug2&amp;t=635881825220000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/LpuUms/WebResource.axd?d=b8adWYak0tImLef4A3fc9Z5HlX5rbUDjk3hKGpjOzppkhGRPJ2Wz9Na5mda4NhGOE8drKPKoa1V634eyecdP45uKJ6FJf17FAcnSSNmod2ZiVW3k18cY6MQRtVTj4ywusb2zwj6j1C46OSrPKVPYOQ2&amp;t=635881825220000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/LpuUms/WebResource.axd?d=h0MkSn0fIoCPzk73lQFHIce6qHqvQ7NP5Z39Zx_ndJQvCQPbJdP9vdUaHJkTFNrK9LNRbidj9Y67UvoDL5Kc_Ylv4vcdpCz6mgeBNuoJQtd_DJy-rUc8TUwM2zpqVmqnoPs041LWegm44SW1odSKqVL_iUQlL1RFwyzSTP9x1Yg1&amp;t=635881825220000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/LpuUms/WebResource.axd?d=Nhf6TpUj19KZ9rhEj2xtdUEjqOt9Cv39Kn8DtFs4nhe5lCn7Bzu7P71qqq4w3BvXBv2Gh47q-BiC_-qS5MRMiBxgfBmhXvkFNI1YaAGC7k51j6f6mV4wLJl9azJe-6fs0&amp;t=635881825220000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/LpuUms/WebResource.axd?d=sScE3ou9ilxFGwP1ssLXz_geDIsGlbo-QdrZFLH1-S74sTUQM1Zj0V_CziPQVe97fLEvNKilxI5Sx3viTKY8bJIZUf9cuOt6FwemiDa_EgLCK5LOxGkL1htppTc6YYt_e9D9gOxM1my04_QQPMFwHyW-pNB6msmUVqDpuVSDCxo1&amp;t=635881825220000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/LpuUms/WebResource.axd?d=VcBz8pMfUoZQpDoGoq1YTi07UAqiPD4435Z0KZmDldt4PRiKXzJNCiGpIb0Ok5i5j0k2kPEaOsgXdI0UxJ0P0XGw5xC4Svuost6Wq3nZXDcZKAFUm_e866Pxm_J69v3yjSt3-ev9yj9clW29jj7R878sxXjTFOVayaFGHNM2saU1&amp;t=635881825220000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /></head>
+<body>
+    <form method="post" action="./frmMarksView.aspx" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm" enctype="multipart/form-data">
+<div class="aspNetHidden">
+<input type="hidden" name="ctl00_RadScriptManager1_TSM" id="ctl00_RadScriptManager1_TSM" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VSTATE" id="__VSTATE" value="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" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/LpuUms/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZAOUtuD1rbM5aDD67V5syTSKv1acTI2rf7WUfFtEqew7vkhup5cn2IDIEe5RyUYwoQ2&amp;t=636396446620000000" type="text/javascript"></script>
+
+
+<script src="/LpuUms/ScriptResource.axd?d=nv7asgRUU0tRmHNR2D6t1H7IYDzW-l3Wbw6YtWCvcQRrEyNY7kelkWjwRjN0XobsI5VEvTilHanwkHUFtlQQyfWUlKA8vTdpyID49CJ7_j_7E3WkyeZYw8s64B2xU01xFa8gwKF23OvNX6FULDF8tQ2&amp;t=38c11c4b" type="text/javascript"></script>
+<script src="/LpuUms/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ctl00_RadScriptManager1_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3a3542601e-9c1f-4a5f-b344-e01a858e4b49%3aea597d4b%3ab25378d2%3bTelerik.Web.UI%2c+Version%3d2016.1.113.45%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-US%3acb3d1a3e-7303-48dc-a612-61700f912203%3a16e4e7cd%3af7645509%3a24ee1bba%3ae330518b%3a2003d0b8%3ac128760b%3a88144a7a%3a1e771326%3ac8618e41%3a1a73651d%3a333f8d94%3af46195d3%3aaa288e2d%3a258f1c72%3a58366029%3ae4f8f289%3bAjaxControlToolkit%2c+Version%3d17.1.1.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d28f01b0e84b6d53e%3aen-US%3aca39a345-a86e-4c56-85db-a9a248b386f1%3acd9be5ef%3af2800037%3a2761bb61%3adffb332%3a4380ed18" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+null;if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="iERysRJ2eK3ySwZ1tl79f1HakhOm0/4ZNC6usTa2q4UL1r21Rr6CDpdf33+U8DGT0hdg5E+7v/wxf5m8NxtW7jl/vKwBYsI4aEW228EXWioj9jCop6wn2f6ITEsP+kTJ4Cum+OHvS/lPPj5cpMTjBRROOGihFgAcB/SrlcUBNDG8aEW4hni3PE7AYWlGxwRS360AY4KJSkkn+jm5OHca2vhXNWeRXqko4Ms9FCCtNgq7Qdskkz19L8+zYIwbnz75XtOSf0CNiKyDCL5Wbc4cO0l8IxXJebkIwqKos7yc5D4JxWEB3tu5VxyfVPKlLGXv5bj+lkx/lyAiELDNSaZehBdDkggIMtoyG9bxCM1yd7l3oo8jPthebBpRhO42obgWEGimUlZ35j8xk/t687r7r16qKk6KtMSFNYp8dlyVLYMtGc2yoQajfLEvTM71FiiKU4+uDipGyTRvP/rl6p4nnBwOlkLr/fbZ3I0ijvyz+a148ScXafVzqLOr0gFfZZBMQFhgdChJbF1UmX07Vde7EI/vERfAu2pNrEZWkj8T2igwrN228+P95NUNNPFlhVV6YirUPe/Hz+Mmi6Kt95g3YSrZhMxUrIdTz+tI5p7ctWD49ofgF87j2E5s/J+el2TuBFDOIiOm+Bj4PN6EfdHgSawqNDA3aMEWGbi9qu5yGQlXdr4raLgnzTFotC3oIg36vSr8JSeqnHyXuSKyOa3lOiJ/SDoKb2n90UrYsXdh8TD8PcqDnoSeERNsB4VVwo+3HVpkRpJpOlbNrBjjSyEtHDbj7wwnGH/HjcF/7nmedBpHizaSDpoYohlIzvA4JkAOqeZugJqhpFlD9TcRan29jEYc/GlSxUo6yXljfK09kPkVUj5GwIAJsulMb+injt5mYd3O1YxJ3gHlJId/XMTxzs7PlKi4wYbTvlVELyEdjnqoI1QenEP4MJCoU+HtdTMi/jzpB4qlkVaACQbJranzggWtuX9ofNP+01VYSZsfggM=" />
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$RadScriptManager1', 'aspnetForm', ['tctl00$WcHeaderforStudent1$WUCStudentIdea1$UpdatePanel1','','tctl00$cphHeading$UpdatePanel1',''], [], ['ctl00$WcHeaderforStudent1$WUCStudentIdea1$rdStatus',''], 90, 'ctl00');
+//]]>
+</script>
+
+
+        <script type="text/javascript">
+            var prm = Sys.WebForms.PageRequestManager.getInstance();
+            prm.add_initializeRequest(InitializeRequest);
+            function InitializeRequest(sender, args) {
+                if (prm.get_isInAsyncPostBack()) {
+                    args.set_cancel(true);
+                }
+            }
+        </script>
+
+        <div id="main_page" class="main_page">
+            <div id="wrap">
+                <div id="content">
+                    
+<style type="text/css">
+    .RadMenu_Sunset .rmRootGroup
+    {
+        border: none;
+    }
+    .RadMenu_Default .rmRootGroup
+    {
+        border: none;
+    }
+    .RadMenu_Hay .rmRootGroup
+    {
+        border: none;
+    }
+    .rmRootScrollGroup
+    {
+        width: 339px !important;
+    }
+</style>
+<div id="ctl00_WcHeaderforStudent1_UpdateProgress1" style="display:none;">
+	
+        <img src="DesignImages/wait_anim.gif" alt='' />
+    
+</div>
+<div id="header">
+    <a href="#" class="logo">
+        <img src="imgs/logo.png" width="224" height="131" alt="Logo" /></a>
+    <div class="header_right">
+        <div class="header_right_top">
+            <img class="ums_logo" src="imgs/ums.png" width="275" height="58" />
+            <div class="quick_links">
+                <ul>
+                    <li>
+                        <a id="ctl00_WcHeaderforStudent1_blue" title="Blue" class="aspLinkButton" href="javascript:__doPostBack(&#39;ctl00$WcHeaderforStudent1$blue&#39;,&#39;&#39;)"><img src="imgs/blue_icon.png" width="11" height="11" border="0" /></a></li>
+                    <li>
+                        <a id="ctl00_WcHeaderforStudent1_green" title="Green" class="aspLinkButton" href="javascript:__doPostBack(&#39;ctl00$WcHeaderforStudent1$green&#39;,&#39;&#39;)"><img src="imgs/green_icon.png" width="11" height="11" border="0" /> </a></li>
+                    <li>
+                        <a id="ctl00_WcHeaderforStudent1_orange" title="Orange" class="aspLinkButton" href="javascript:__doPostBack(&#39;ctl00$WcHeaderforStudent1$orange&#39;,&#39;&#39;)"><img src="imgs/orange_icon.png" width="11" height="11" border="0" /></a></li>
+                    <li>
+                        <a id="ctl00_WcHeaderforStudent1_purple" title="Purple" class="aspLinkButton" href="javascript:__doPostBack(&#39;ctl00$WcHeaderforStudent1$purple&#39;,&#39;&#39;)"><img src="imgs/purple_icon.png" width="11" height="11" border="0" /></a></li>
+                    <li>
+                        <a id="ctl00_WcHeaderforStudent1_red" title="Red" class="aspLinkButton" href="javascript:__doPostBack(&#39;ctl00$WcHeaderforStudent1$red&#39;,&#39;&#39;)"><img src="imgs/red_icon.png" width="11" height="11" border="0" /></a></li>
+                    <li>
+                        <a id="ctl00_WcHeaderforStudent1_brown" title="Brown" class="aspLinkButton" href="javascript:__doPostBack(&#39;ctl00$WcHeaderforStudent1$brown&#39;,&#39;&#39;)"><img src="imgs/brown_icon.png" width="11" height="11" border="0"/></a></li>
+                    <li>
+                        <a id="ctl00_WcHeaderforStudent1_sky" title="Sky" class="aspLinkButton" href="javascript:__doPostBack(&#39;ctl00$WcHeaderforStudent1$sky&#39;,&#39;&#39;)"><img src="imgs/sky_icon.png" width="11" height="11" border="0"/></a></li>
+                    <li>
+                        <a id="ctl00_WcHeaderforStudent1_pink" title="Pink" class="aspLinkButton" href="javascript:__doPostBack(&#39;ctl00$WcHeaderforStudent1$pink&#39;,&#39;&#39;)"><img src="imgs/pink_icon.png" width="11" height="11" border="0"/></a></li>
+                    <li>
+                        <a id="ctl00_WcHeaderforStudent1_violet" title="Violet" class="aspLinkButton" href="javascript:__doPostBack(&#39;ctl00$WcHeaderforStudent1$violet&#39;,&#39;&#39;)"><img src="imgs/violet_icon.png" width="11" height="11" border="0"/></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="header_right_bottom">
+            <div class="nav_left">
+                
+                <input type="hidden" name="ctl00$WcHeaderforStudent1$hdnType" id="ctl00_WcHeaderforStudent1_hdnType" value="S" />
+                <div id="ctl00_WcHeaderforStudent1_radStudentMenu" class="RadMenu RadMenu_Default rmSized" style="width:100%;top: 1px; left: 0px">
+	<!-- 2016.1.113.45 --><div class="rmScrollWrap rmRootGroup rmHorizontal" style="width:100%;">
+		<ul class="rmRootScrollGroup">
+			<li class="rmItem rmFirst"><a class="rmLink rmRootLink" href="#"><span class="rmText">UMS Navigation</span></a><div class="rmSlide">
+				<ul class="rmVertical rmGroup rmLevel1">
+					<li class="rmItem rmFirst"><a class="rmLink" href="#"><span class="rmText">Central Mail System</span></a><div class="rmSlide">
+						<ul class="rmVertical rmGroup rmLevel2">
+							<li class="rmItem rmFirst"><a class="rmLink" href="frmCentralMailReceived.aspx"><span class="rmText">Central Mail Receiving</span></a></li><li class="rmItem rmLast"><a class="rmLink" href="frmCentralMailTracking.aspx"><span class="rmText">Tracking Incoming Mail</span></a></li>
+						</ul>
+					</div></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Examination</span></a><div class="rmSlide">
+						<ul class="rmVertical rmGroup rmLevel2">
+							<li class="rmItem rmFirst"><a class="rmLink" href="#"><span class="rmText">Backlog Registration
+</span></a><div class="rmSlide">
+								<ul class="rmVertical rmGroup rmLevel3">
+									<li class="rmItem rmFirst rmLast"><a class="rmLink" href="frmStudentBacklogEntry.aspx"><span class="rmText">Backlog Course Registration</span></a></li>
+								</ul>
+							</div></li><li class="rmItem "><a class="rmLink" href="frmExternalCertificates.aspx"><span class="rmText">Certificate Request</span></a></li><li class="rmItem "><a class="rmLink" href="frmStudentExamAttendanceDisplay.aspx"><span class="rmText">Exam Attendance</span></a></li><li class="rmItem "><a class="rmLink" href="frmSeatingPlan.aspx"><span class="rmText">Examination Seating Plan</span></a></li><li class="rmItem "><a class="rmLink" href="frmDispalyOmrSheetlink.aspx"><span class="rmText">OMR Sheet Scrutiny</span></a></li><li class="rmItem "><a class="rmLink" href="frmStudentPaidTransaction.aspx"><span class="rmText">Online Transactions</span></a></li><li class="rmItem "><a class="rmLink" href="frmProvisionalAdmitCard.aspx"><span class="rmText">Provisional Admit Card</span></a></li><li class="rmItem "><a class="rmLink" href="frmProvisionalDMCRequest.aspx"><span class="rmText">Provisional DMC Request</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Re-Appear Registration</span></a><div class="rmSlide">
+								<ul class="rmVertical rmGroup rmLevel3">
+									<li class="rmItem rmFirst"><a class="rmLink" href="frmreappearfeereceipt.aspx"><span class="rmText">Fee Receipt</span></a></li><li class="rmItem "><a class="rmLink" href="frmExamRegisteration.aspx"><span class="rmText">Registration Form</span></a></li><li class="rmItem rmLast"><a class="rmLink" href="frmExamRegisterationAfterDate.aspx"><span class="rmText">Registration Form with Date Sheet</span></a></li>
+								</ul>
+							</div></li><li class="rmItem rmLast"><a class="rmLink" href="#"><span class="rmText">Summer Term</span></a><div class="rmSlide">
+								<ul class="rmVertical rmGroup rmLevel3">
+									<li class="rmItem rmFirst"><a class="rmLink" href="frmSummerTermCoursePreference.aspx"><span class="rmText">Summer Term Backlog Course Preference</span></a></li><li class="rmItem "><a class="rmLink" href="frmSummerTermDeregistration.aspx"><span class="rmText">Summer Term Course De-Registration</span></a></li><li class="rmItem rmLast"><a class="rmLink" href="frmSummerTermRegisteration.aspx"><span class="rmText">Summer Term Course Registration</span></a></li>
+								</ul>
+							</div></li>
+						</ul>
+					</div></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Feedback & Surveys</span></a><div class="rmSlide">
+						<ul class="rmVertical rmGroup rmLevel2">
+							<li class="rmItem rmFirst"><a class="rmLink" href="frmStudentSurveyForScheme.aspx"><span class="rmText">Feedback for Program Scheme and Courses</span></a></li><li class="rmItem "><a class="rmLink" href="frmStudentSurvey.aspx"><span class="rmText">Feedback For Teacher/Mentor/AO/Heads</span></a></li><li class="rmItem "><a class="rmLink" href="frmGuestLectureStudentFeedbackMaster.aspx"><span class="rmText">Guest Lecture Feedback</span></a></li><li class="rmItem rmLast"><a class="rmLink" href="frmSurveyTerms.aspx"><span class="rmText">Online Survey</span></a></li>
+						</ul>
+					</div></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Finance Management System (FMS)</span></a><div class="rmSlide">
+						<ul class="rmVertical rmGroup rmLevel2">
+							<li class="rmItem rmFirst"><a class="rmLink" href="frmStudentBankInformation.aspx"><span class="rmText">Bank Account Confirmation</span></a></li><li class="rmItem "><a class="rmLink" href="frmStudentAccountsCertificates.aspx"><span class="rmText">Certificates</span></a></li><li class="rmItem "><a class="rmLink" href="Static%20Information/SCHOALR%20CARDICAH%20CARD.pdf"><span class="rmText">Compound Fee via Scholar Card</span></a></li><li class="rmItem "><a class="rmLink" href="frmDepositFeeDetail.aspx"><span class="rmText">Confirmation of Online Fee Deposit</span></a></li><li class="rmItem "><a class="rmLink" href="Static%20Information/FEE_DEPOSIT_GUIDELINE2017.rar"><span class="rmText">Fee Deposit Guideline</span></a></li><li class="rmItem "><a class="rmLink" href="Reports/frmStudentFeeSlip.aspx"><span class="rmText">Fee Deposit Slip</span></a></li><li class="rmItem "><a class="rmLink" href="Reports/frmStudentFeeReceipt.aspx"><span class="rmText">Fee Receipts</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Fee Structure </span></a><div class="rmSlide">
+								<ul class="rmVertical rmGroup rmLevel3">
+									<li class="rmItem rmFirst"><a class="rmLink" href="Static%20Information/FEE_Notification_INR2017.rar"><span class="rmText">Fee structure for Indian student</span></a></li><li class="rmItem rmLast"><a class="rmLink" href="Static%20Information/FEE_Notification_USD2017.rar"><span class="rmText">Fee structure for International Student in US dollar</span></a></li>
+								</ul>
+							</div></li><li class="rmItem "><a class="rmLink" href="Static%20Information/INFORMATION%20BROCHURE..pdf"><span class="rmText">Information Brochure</span></a></li><li class="rmItem "><a class="rmLink" href="Reports/frmStatementofAccounts.aspx"><span class="rmText">My Fee Status</span></a></li><li class="rmItem "><a class="rmLink" href="Static%20Information/ReimbursementUnderTakingnew.pdf"><span class="rmText">Reimbursement UnderTaking Form</span></a></li><li class="rmItem "><a class="rmLink" href="frmAccountsRequestMaster.aspx"><span class="rmText">Reimbursement, Fee Extension, Loan Letter & Tution Fee Certificates</span></a></li><li class="rmItem rmLast"><a class="rmLink" href="frmStudentTokenAllotment.aspx"><span class="rmText">Token Allotment</span></a></li>
+						</ul>
+					</div></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Health Services</span></a><div class="rmSlide">
+						<ul class="rmVertical rmGroup rmLevel2">
+							<li class="rmItem rmFirst rmLast"><a class="rmLink" href="frmDoctorAppointmnt.aspx"><span class="rmText">Doctor Appointment</span></a></li>
+						</ul>
+					</div></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Learning Management System (LMS)</span></a><div class="rmSlide">
+						<ul class="rmVertical rmGroup rmLevel2">
+							<li class="rmItem rmFirst"><a class="rmLink" href="frmCourseSyllabus.aspx"><span class="rmText">Academic Course Syllabus</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Assignment</span></a><div class="rmSlide">
+								<ul class="rmVertical rmGroup rmLevel3">
+									<li class="rmItem rmFirst"><a class="rmLink" href="frmstudentdownloadassignment.aspx"><span class="rmText">Assignment Download</span></a></li><li class="rmItem rmLast"><a class="rmLink" href="frmstudentassignmentupload.aspx"><span class="rmText">Assignment Upload</span></a></li>
+								</ul>
+							</div></li><li class="rmItem "><a class="rmLink" href="frmCRQuestionnaire.aspx"><span class="rmText">CR Nomination</span></a></li><li class="rmItem "><a class="rmLink" href="frmStudentEventsDutyLeave.aspx"><span class="rmText">Event Duty Leaves</span></a></li><li class="rmItem "><a class="rmLink" href="frmCourseIp.aspx"><span class="rmText">Instruction Plans</span></a></li><li class="rmItem "><a class="rmLink" href="frmCourseLm.aspx"><span class="rmText">Lab Manuals</span></a></li><li class="rmItem "><a class="rmLink" href="http://172.19.2.6:8580/webopac/html/searchform"><span class="rmText">Library Search</span></a></li><li class="rmItem "><a class="rmLink" href="frmViewStudentMakeupAdjusment.aspx"><span class="rmText">MakeUp and Adjustment Details</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Minor Elective</span></a><div class="rmSlide">
+								<ul class="rmVertical rmGroup rmLevel3">
+									<li class="rmItem rmFirst"><a class="rmLink" href="frmMinorElectivePolling.aspx"><span class="rmText">Polling</span></a></li><li class="rmItem rmLast"><a class="rmLink" href="frmApplicableMinorElective.aspx"><span class="rmText">View Applicable Areas</span></a></li>
+								</ul>
+							</div></li><li class="rmItem "><a class="rmLink" href="frmMinorAreaPrefrence.aspx"><span class="rmText">Open Minor Elective Area Preference</span></a></li><li class="rmItem "><a class="rmLink" href="frmOESSECoursePrefrence.aspx"><span class="rmText">Open/Social Sci. Elective Course Preference</span></a></li><li class="rmItem "><a class="rmLink" href="frmOeRegistration.aspx"><span class="rmText">Open/Social Sci. Elective Registration</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Practical</span></a><div class="rmSlide">
+								<ul class="rmVertical rmGroup rmLevel3">
+									<li class="rmItem rmFirst rmLast"><a class="rmLink" href="frmStudentUploadPractical.aspx"><span class="rmText">Practical Upload</span></a></li>
+								</ul>
+							</div></li><li class="rmItem "><a class="rmLink" href="Reports/frmSchemeReportforInternalCirculation.aspx"><span class="rmText">Program Scheme</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Project</span></a><div class="rmSlide">
+								<ul class="rmVertical rmGroup rmLevel3">
+									<li class="rmItem rmFirst rmLast"><a class="rmLink" href="frmCapStudentListfaculty.aspx"><span class="rmText">Project /Dissertation Supervisor Information</span></a></li>
+								</ul>
+							</div></li><li class="rmItem "><a class="rmLink" href="frmCapstoneStudentAttendanceView.aspx"><span class="rmText">Project-Dissertation Attendance View</span></a></li><li class="rmItem "><a class="rmLink" href="frmCapstoneStudentViewMarks.aspx"><span class="rmText">Project-Dissertation Marks View</span></a></li><li class="rmItem "><a class="rmLink" href="frmStudentDutyDetail.aspx"><span class="rmText">Request for Duty Leave</span></a></li><li class="rmItem "><a class="rmLink" href="frmStudentCreditTransferUndertaking.aspx"><span class="rmText">Undertaking for Credit Transfer Option</span></a></li><li class="rmItem "><a class="rmLink" href="frmStudentTrainingExitContinueOptions.aspx"><span class="rmText">Undertaking Format for Option Taking</span></a></li><li class="rmItem "><a class="rmLink" href="frmStudentUploadCapstoneProject.aspx"><span class="rmText">Upload Research Project</span></a></li><li class="rmItem "><a class="rmLink" href="Reports/rptCourseWiseStudentAttendance.aspx"><span class="rmText">View Attendance</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">View Result</span></a><div class="rmSlide">
+								<ul class="rmVertical rmGroup rmLevel3">
+									<li class="rmItem rmFirst"><a class="rmLink" href="frmStudentResultDisplay.aspx"><span class="rmText">View Grades</span></a></li><li class="rmItem rmLast"><a class="rmLink" href="frmMarksView.aspx"><span class="rmText">View Marks</span></a></li>
+								</ul>
+							</div></li><li class="rmItem rmLast"><a class="rmLink" href="Reports/frmStudentTimeTable.aspx"><span class="rmText">View Time Table</span></a></li>
+						</ul>
+					</div></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Library Management System</span></a><div class="rmSlide">
+						<ul class="rmVertical rmGroup rmLevel2">
+							<li class="rmItem rmFirst"><a class="rmLink" href="frmStudentPDFView.aspx"><span class="rmText">Dissertation/Thesis</span></a></li><li class="rmItem "><a class="rmLink" href="http://112.196.62.20/login"><span class="rmText">E-Resources</span></a></li><li class="rmItem rmLast"><a class="rmLink" href="http://172.19.2.6:8580/webopac/html/searchform"><span class="rmText">Library Search</span></a></li>
+						</ul>
+					</div></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">My Profile</span></a><div class="rmSlide">
+						<ul class="rmVertical rmGroup rmLevel2">
+							<li class="rmItem rmFirst rmLast"><a class="rmLink" href="frmStudentProfileUpdate.aspx"><span class="rmText">Profile Update</span></a></li>
+						</ul>
+					</div></li><li class="rmItem "><a class="rmLink" href="http://lpuonline.in/eduonline"><span class="rmText">Online Courses (Use UMS ID & Password)</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Placement Services</span></a><div class="rmSlide">
+						<ul class="rmVertical rmGroup rmLevel2">
+							<li class="rmItem rmFirst"><a class="rmLink" href="frmPlacementStudentShare.aspx"><span class="rmText">Placement Document Repository</span></a></li><li class="rmItem "><a class="rmLink" href="frmStudentSessionRegistration.aspx"><span class="rmText">Placement Event Registration</span></a></li><li class="rmItem "><a class="rmLink" href="frmPlacementPortalRegistration.aspx"><span class="rmText">Placement Policy Registration</span></a></li><li class="rmItem "><a class="rmLink" href="frmPlacementHome.aspx"><span class="rmText">Placement Portal</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Placement Question Bank</span></a><div class="rmSlide">
+								<ul class="rmVertical rmGroup rmLevel3">
+									<li class="rmItem rmFirst"><a class="rmLink" href="frmStudentPlacmentIQBankAdd.aspx"><span class="rmText">Add Questions</span></a></li><li class="rmItem rmLast"><a class="rmLink" href="frmStudentPlacmentIQBank.aspx"><span class="rmText">View Question Bank</span></a></li>
+								</ul>
+							</div></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Student Body</span></a><div class="rmSlide">
+								<ul class="rmVertical rmGroup rmLevel3">
+									<li class="rmItem rmFirst rmLast"><a class="rmLink" href="Static%20Information/SPCPolicy.pdf"><span class="rmText">Student Placement Coordinator Policy</span></a></li>
+								</ul>
+							</div></li><li class="rmItem rmLast"><a class="rmLink" href="frmSummerInternshipRegistration.aspx"><span class="rmText">Summer Internship Registration</span></a></li>
+						</ul>
+					</div></li><li class="rmItem "><a class="rmLink" href="frmPressReleaseRequestByStudent.aspx"><span class="rmText">Press Release Request</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Relationship Management System (RMS)</span></a><div class="rmSlide">
+						<ul class="rmVertical rmGroup rmLevel2">
+							<li class="rmItem rmFirst"><a class="rmLink" href="frmMtsMessage.aspx"><span class="rmText">Log Request</span></a></li><li class="rmItem rmLast"><a class="rmLink" href="frmMtsUserHome.aspx"><span class="rmText">View Request Status</span></a></li>
+						</ul>
+					</div></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Research & Development</span></a><div class="rmSlide">
+						<ul class="rmVertical rmGroup rmLevel2">
+							<li class="rmItem rmFirst"><a class="rmLink" href="frmResearchAnnualSeminarRegister.aspx"><span class="rmText">Annual Seminar Registration Form</span></a></li><li class="rmItem "><a class="rmLink" href="frmResearchDipStudent.aspx"><span class="rmText">IPR Idea Request</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Research Proposal For Internal Funding</span></a><div class="rmSlide">
+								<ul class="rmVertical rmGroup rmLevel3">
+									<li class="rmItem rmFirst rmLast"><a class="rmLink" href="#"><span class="rmText">Transaction</span></a></li>
+								</ul>
+							</div></li><li class="rmItem rmLast"><a class="rmLink" href="frmResearchSotaRegister.aspx"><span class="rmText">SOTA Registration Form</span></a></li>
+						</ul>
+					</div></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Residential & Vendor Services</span></a><div class="rmSlide">
+						<ul class="rmVertical rmGroup rmLevel2">
+							<li class="rmItem rmFirst"><a class="rmLink" href="frmHostelCloakRoomApplication.aspx"><span class="rmText">Hostel Cloak Room Application</span></a></li><li class="rmItem "><a class="rmLink" href="frmHostelConfiscationItemAcknowledgement.aspx"><span class="rmText">Hostel Confiscation Item Acknowledgement</span></a></li><li class="rmItem "><a class="rmLink" href="frmStudentHostelLeaveApplication.aspx"><span class="rmText">Hostel Leave Application</span></a></li><li class="rmItem "><a class="rmLink" href="frmHostelMailAcknowledgeByStudent.aspx"><span class="rmText">Hostel Mail Acknowledgement</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Mess Card</span></a><div class="rmSlide">
+								<ul class="rmVertical rmGroup rmLevel3">
+									<li class="rmItem rmFirst"><a class="rmLink" href="frmNoFood.aspx"><span class="rmText">Cancellation of Food</span></a></li><li class="rmItem rmLast"><a class="rmLink" href="frmLostCardRequest.aspx"><span class="rmText">Card Block Request</span></a></li>
+								</ul>
+							</div></li><li class="rmItem "><a class="rmLink" href="frmInternationalStudentsResidence.aspx"><span class="rmText">Resident details</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Residential Booking</span></a><div class="rmSlide">
+								<ul class="rmVertical rmGroup rmLevel3">
+									<li class="rmItem rmFirst"><a class="rmLink" href="frmHostelPollingRefundForm.aspx"><span class="rmText">Apply Hostel Cancellation/Refund Form</span></a></li><li class="rmItem "><a class="rmLink" href="frmStudentHostelChangeFoodPeriod.aspx"><span class="rmText">Availing Food/Laundry Facility</span></a></li><li class="rmItem "><a class="rmLink" href="frmHostelSwap.aspx"><span class="rmText">Hostel Mutual shifting</span></a></li><li class="rmItem "><a class="rmLink" href="frmHostelSeaterChangePreference.aspx"><span class="rmText">Hostel/Aptt. Seater Change Request</span></a></li><li class="rmItem "><a class="rmLink" href="frmStudentHostelBookingWaitList.aspx"><span class="rmText">Not opting any seat</span></a></li><li class="rmItem "><a class="rmLink" href="frmStudentHostelBooking.aspx"><span class="rmText">Online Residential Booking</span></a></li><li class="rmItem "><a class="rmLink" href="frmHostelPollingAfterBooking.aspx"><span class="rmText">Online Residential Booking With Late Fee</span></a></li><li class="rmItem "><a class="rmLink" href="frmHostelPreferenceForPEP.aspx"><span class="rmText">PEP Hostel Booking</span></a></li><li class="rmItem "><a class="rmLink" href="frmMakeICashPaymentForHostelPolling.aspx"><span class="rmText">Registration for online residential booking</span></a></li><li class="rmItem rmLast"><a class="rmLink" href="frmSummerTermHostelBooking.aspx"><span class="rmText">Summer Vacation Hostel Booking</span></a></li>
+								</ul>
+							</div></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Transport Management System</span></a><div class="rmSlide">
+								<ul class="rmVertical rmGroup rmLevel3">
+									<li class="rmItem rmFirst"><a class="rmLink" href="frmVehicleTracker.aspx"><span class="rmText">Live Status of vehicle</span></a></li><li class="rmItem rmLast"><a class="rmLink" href="frmStudentTransportPreference.aspx"><span class="rmText">Transport Preference</span></a></li>
+								</ul>
+							</div></li><li class="rmItem "><a class="rmLink" href="frmHostelDeallocationActionTakenByStudent.aspx"><span class="rmText">Undertaking for seat cancellation</span></a></li><li class="rmItem rmLast"><a class="rmLink" href="frmCampusItemSearch.aspx"><span class="rmText">Vendor Services Search</span></a></li>
+						</ul>
+					</div></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Security & Safety</span></a><div class="rmSlide">
+						<ul class="rmVertical rmGroup rmLevel2">
+							<li class="rmItem rmFirst"><a class="rmLink" href="frmVisitorGatePassStudentRequest.aspx"><span class="rmText">Online Sponsored Parent Pass</span></a></li><li class="rmItem rmLast"><a class="rmLink" href="frmStudentRFIDPassFormWithICash.aspx"><span class="rmText">RFID Application Form</span></a></li>
+						</ul>
+					</div></li><li class="rmItem rmLast"><a class="rmLink" href="#"><span class="rmText">Student Affairs</span></a><div class="rmSlide">
+						<ul class="rmVertical rmGroup rmLevel2">
+							<li class="rmItem rmFirst"><a class="rmLink" href="frmStudentClubRegisteration.aspx"><span class="rmText">Activity Registration</span></a></li><li class="rmItem "><a class="rmLink" href="frmSportsClubStudentAttendance.aspx"><span class="rmText">Club Attendance View</span></a></li><li class="rmItem "><a class="rmLink" href="frmdlStudentEventRegister.aspx"><span class="rmText">Event Registration</span></a></li><li class="rmItem "><a class="rmLink" href="frmDSAStudentsEventRegistration.aspx"><span class="rmText">Online Student Registration</span></a></li><li class="rmItem "><a class="rmLink" href="frmStudentRegisterPartTimejobReport.aspx"><span class="rmText">Part-Time Job Detail</span></a></li><li class="rmItem rmLast"><a class="rmLink" href="frmDSAStudentPolicyView.aspx"><span class="rmText">Policies</span></a></li>
+						</ul>
+					</div></li>
+				</ul>
+			</div></li><li class="rmItem "><a class="rmLink rmRootLink" href="#"><span class="rmText">Important Links</span></a><div class="rmSlide">
+				<ul class="rmVertical rmGroup rmLevel1">
+					<li class="rmItem rmFirst"><a class="rmLink" href="#"><span class="rmText">Academic Calendar</span></a><div class="rmSlide">
+						<ul class="rmVertical rmGroup rmLevel2">
+							<li class="rmItem rmFirst"><a class="rmLink" href="Static%20Information/Academic%20calender/Academic_Calendar_for_Autumn_Term_of_Academic_Session_2017-18_for_B._Pharmacy_and_M_Pharmacy_Programmes.pdf"><span class="rmText">Autumn Term of Academic Session 2017-18 for B. Pharmacy and M Pharmacy Programmes</span></a></li><li class="rmItem "><a class="rmLink" href="Static%20Information/Academic%20calender/AcademicCalendars-FullTimeProgrammesforAutumnTermSession1718.pdf"><span class="rmText">Full time programmes (2017-18)</span></a></li><li class="rmItem "><a class="rmLink" href="Static%20Information/Academic%20calender/Academic_Calendars_for_all_Full_Time_Programmes_offered_in_School_of_BPT_and_MPT_for_Autumn_Term_(Session_2017-18).pdf"><span class="rmText">Full Time Programmes - BPT and MPT for Autumn Term (2017-18)</span></a></li><li class="rmItem "><a class="rmLink" href="Static%20Information/Academic%20calender/Academic_Calendars_for_all_Full_Time_Programmes_offered_in_School_of_Agriculture_for_Autumn_Term_(2017-18).pdf"><span class="rmText">Full Time Programmes - School of Agriculture for Autumn Term (2017-18)</span></a></li><li class="rmItem "><a class="rmLink" href="Static%20Information/Academic%20calender/AcademicCalendarsFullTimeProgrammesofferedinSchoolofEducationforAutumnTerm(Session201718).pdf"><span class="rmText">Full Time Programmes - School of Education for Autumn Term (2017-18)</span></a></li><li class="rmItem "><a class="rmLink" href="Static%20Information/Academic%20calender/Academic_Calendars_For_all_Full_Time_Programmes_offered_in_School_of_Physical_Education_for_Autumn_Term_(Session_2017-18).pdf"><span class="rmText">Full Time Programmes - School of Physical Education for Autumn Term (2017-18)</span></a></li><li class="rmItem "><a class="rmLink" href="Static%20Information/AC_MASTERSOFPHYSIOTHERAPY16161.pdf"><span class="rmText">Masters of Physiotherapy for Term 16161</span></a></li><li class="rmItem rmLast"><a class="rmLink" href="Static%20Information/Academic%20calender/Academic_Calendars_for_all_Part_Time_Programmes_for_Autumn_Term_(Session_2017-18).pdf"><span class="rmText">Part Time Programmes for Autumn Term (2017-18)</span></a></li>
+						</ul>
+					</div></li><li class="rmItem "><a class="rmLink" href="frmDuplicateIdCardApplicationForm.aspx"><span class="rmText">Apply Duplicate Id/Transport Card</span></a></li><li class="rmItem "><a class="rmLink" href="frmTurnStileAppointmentDetails.aspx"><span class="rmText">Appointment System (Manpower Access Facilitation Cell)</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Btech CSE</span></a><div class="rmSlide">
+						<ul class="rmVertical rmGroup rmLevel2">
+							<li class="rmItem rmFirst"><a class="rmLink" href="Static%20Information/CSE/SCSE%20Induction%20Presentation%202016-Day1-1Aug.pdf"><span class="rmText">Induction Presentation Day I</span></a></li><li class="rmItem "><a class="rmLink" href="Static%20Information/CSE/SCSE%20Induction%20Presentation%202016-Day%202.pdf"><span class="rmText">Induction Presentation Day II</span></a></li><li class="rmItem rmLast"><a class="rmLink" href="Static%20Information/CSE/Student%20Self%20Development%20Roadmap%20B.Tech%20CSEIT.pdf"><span class="rmText">Self Development RoadMap</span></a></li>
+						</ul>
+					</div></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Capstone Dissertation Internships</span></a><div class="rmSlide">
+						<ul class="rmVertical rmGroup rmLevel2">
+							<li class="rmItem rmFirst"><a class="rmLink" href="Static%20Information/External%20CA%20format%20for%20Internship.pdf"><span class="rmText">External CA format for Internship</span></a></li><li class="rmItem "><a class="rmLink" href="Static%20Information/Guidelines_for_Inviting_External_Examiners_for_Dissertation_Evaluations_Excluding_M.Phil_PhD.pdf"><span class="rmText">Guidelines - Inviting External Examiners for Dissertation Evaluations Excluding M.Phil PhD</span></a></li><li class="rmItem "><a class="rmLink" href="Static%20Information/Guidelines%20for%20Dissertation%20for%20Master%20Degree%20Programs%20Except%20for%20M.Phil.%20Programs%20Applicable%20to%20Academic%20Session%202014-15.pdf"><span class="rmText">Guidelines-Dissertation for Master Degree Prg. except for M.Phil. programs(14-15)</span></a></li><li class="rmItem "><a class="rmLink" href="Static%20Information/Guidelines%20for%20Project%20Courses%20Including%20Capstone%20%20For%20Academic%20Session%202014-15.pdf"><span class="rmText">Guidelines-Project Courses including Capstone(Sess. 14-15)</span></a></li><li class="rmItem rmLast"><a class="rmLink" href="Static%20Information/Evaluation%20Guidelines%20and%20Timeline%20for%20Dessertation-I.pdf"><span class="rmText">Guidlines for MPhil Dissertation</span></a></li>
+						</ul>
+					</div></li><li class="rmItem "><a class="rmLink" href="frmFormatsStudents.aspx"><span class="rmText">Download Formats</span></a></li><li class="rmItem "><a class="rmLink" href="Static%20Information/MTE%20ETE%20Examination%20Pattern.pdf"><span class="rmText">Examination Pattern</span></a></li><li class="rmItem "><a class="rmLink" href="Static%20Information/Academic%20calender/GUIDELINES%20FOR%20TAKING%20OPTION%20FROM%20STUDENTS%20ADMITTED%20IN%20DUAL%20DEGREE%20PROGRAMMES%20FOR%20CONTINUING%20OR%20DISCONTINUING%20THE%20PURSUANCE%20OF%20HIGHER%20DEGREE.pdf"><span class="rmText">Guidelines of Option Taking</span></a></li><li class="rmItem "><a class="rmLink" href="Static%20Information/Siteplan16.jpg"><span class="rmText">Induction/University Map</span></a></li><li class="rmItem "><a class="rmLink" href="Static%20Information/Interaction%20Timings%20with%20Higher%20Authorities.pdf"><span class="rmText">Interaction Timings with Higher Authorities</span></a></li><li class="rmItem "><a class="rmLink" href="frmLostAndFoundReport.aspx"><span class="rmText">Lost and Found Report</span></a></li><li class="rmItem "><a class="rmLink" href="Static%20Information/DoctorList.htm"><span class="rmText">Medical Staff at Uni Hospital</span></a></li><li class="rmItem "><a class="rmLink" href="frmstudentaccommodationdetails.aspx"><span class="rmText">PG/Private/Rented Accommodation Details</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Policies & Rules</span></a><div class="rmSlide">
+						<ul class="rmVertical rmGroup rmLevel2">
+							<li class="rmItem rmFirst"><a class="rmLink" href="#"><span class="rmText">Academic and Examination Rules</span></a><div class="rmSlide">
+								<ul class="rmVertical rmGroup rmLevel3">
+									<li class="rmItem rmFirst rmLast"><a class="rmLink" href="Static%20Information/Academic%20calender/An%20Extract%20of%20changes%20in%20rules%20w%20e%20f%20Session%202013-14.pdf"><span class="rmText">An Extract of changes in rules w e f Session 2013-14.</span></a></li>
+								</ul>
+							</div></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Awards & Scholarships</span></a><div class="rmSlide">
+								<ul class="rmVertical rmGroup rmLevel3">
+									<li class="rmItem rmFirst"><a class="rmLink" href="Policy/StudentFee/S.No.%205.pdf"><span class="rmText">Academic Honour To Regular Students</span></a></li><li class="rmItem rmLast"><a class="rmLink" href="Policy/StudentFee/S.No.%206.pdf"><span class="rmText">Scholarship to Regular Students</span></a></li>
+								</ul>
+							</div></li><li class="rmItem "><a class="rmLink" href="Static%20Information/Guidelines_for_Issuance_of_requipments_from_School%20of_Journalism_,Film_and_Creative_Arts.pdf"><span class="rmText">Guidelines for Issuance of equipment from School of Journalism, Film and Creative Arts</span></a></li><li class="rmItem "><a class="rmLink" href="Static%20Information/Library%20Policy.pdf"><span class="rmText">Library Policy</span></a></li><li class="rmItem rmLast"><a class="rmLink" href="Static%20Information/Policy%20for%20International%20Students.pdf"><span class="rmText">Policy for International Students</span></a></li>
+						</ul>
+					</div></li><li class="rmItem rmLast"><a class="rmLink" href="frmGrievanceRequestMaster.aspx"><span class="rmText">Post Request for Appointment</span></a></li>
+				</ul>
+			</div></li><li class="rmItem rmLast"><a class="rmLink rmRootLink" href="#"><span class="rmText">Change Password</span></a><div class="rmSlide">
+				<ul class="rmVertical rmGroup rmLevel1">
+					<li class="rmItem rmFirst"><a class="rmLink" href="frmchangepassword.aspx"><span class="rmText">Change UMS Password</span></a></li><li class="rmItem "><a class="rmLink" href="frmAdPassword.aspx"><span class="rmText">Reset Internet Password</span></a></li><li class="rmItem rmLast"><a class="rmLink" href="SecretGridUMS.aspx"><span class="rmText">Secret Grid</span></a></li>
+				</ul>
+			</div></li>
+		</ul>
+	</div><input id="ctl00_WcHeaderforStudent1_radStudentMenu_ClientState" name="ctl00_WcHeaderforStudent1_radStudentMenu_ClientState" type="hidden" />
+</div>
+            </div>
+            <div class="nav_right">
+                <ul>
+                    <li><a href="lpStudent.aspx">
+                        <div class="nav_lp_icon">
+                        </div>
+                        Go to LP</a></li>
+                    <li><a href="Default3.aspx" id="ctl00_WcHeaderforStudent1_lnkHome">
+                        <div class="nav_home_icon">
+                        </div>
+                        Home</a></li>
+                    <li><a href="RemoveSession.aspx">
+                        <div class="nav_logout_icon">
+                        </div>
+                        Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="idea">
+    <div class="main">
+        <div class="feedback_heading">
+            Idea Hub<span id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_Label1" title="The Worthy Pro-chancellor,LPU has taken special interest for inviting innovative ideas from students.She has not only appreciated the ideation from the students but has also been eagerly for seeing that the students are helped to translate those idea into reality." class="aspLabel" style="color:White;">(Concept Note)</span>
+            <div id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_vd1" class="aspValidationSummary" style="display:none;">
+
+</div>
+        </div>
+        <table width="100%" cellpadding="7" cellspacing="5" border="0">
+            <tr>
+                <td width="98%">
+                    <strong>Title of your Idea</strong>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input name="ctl00$WcHeaderforStudent1$WUCStudentIdea1$txtProject" type="text" maxlength="200" id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_txtProject" class="aspTextBox" /><span id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator1" class="aspRequiredFieldValidator" style="visibility:hidden;">*</span>
+                    <input type="hidden" name="ctl00$WcHeaderforStudent1$WUCStudentIdea1$TextBoxWatermarkExtender1_ClientState" id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_TextBoxWatermarkExtender1_ClientState" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Aim</strong>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="ctl00$WcHeaderforStudent1$WUCStudentIdea1$ddlAim" id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_ddlAim" class="aspDropDownList" style="width:262px;">
+	<option selected="selected" value="Select aim">Select aim</option>
+	<option value="Innovation">Innovation</option>
+	<option value="Improve Efficiency">Improve Efficiency</option>
+	<option value="User Friendly">User Friendly</option>
+	<option value="Improve Connect">Improve Connect</option>
+	<option value="System Oriented and Automation">System Oriented and Automation</option>
+	<option value="Budget Control/ Optimum Utilization of Resources">Budget Control/ Optimum Utilization of Resources</option>
+	<option value="Any Other">Any Other</option>
+
+</select>
+                    <span id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator3" class="aspRequiredFieldValidator" style="visibility:hidden;">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Description</strong>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <textarea name="ctl00$WcHeaderforStudent1$WUCStudentIdea1$txtDescription" rows="2" cols="20" id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_txtDescription" class="aspTextBox" style="height:30px;resize:none">
+</textarea><span id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator2" class="aspRequiredFieldValidator" style="display:none;">*</span>
+                    <span id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_regex1" class="aspRegularExpressionValidator" style="display:none;">Text Too Long</span>
+                    <input type="hidden" name="ctl00$WcHeaderforStudent1$WUCStudentIdea1$TextBoxWatermarkExtender2_ClientState" id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_TextBoxWatermarkExtender2_ClientState" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Do you have any expert to supervise(If any):</strong>
+                     
+                </td>
+            </tr>
+         
+            <tr>
+                <td align="left">
+                    <div id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_UpdatePanel1">
+	
+                            <table id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_rdStatus" class="aspRadioButtonList" onchange="return selectValue();">
+		<tr>
+			<td><span><input id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_rdStatus_0" type="radio" name="ctl00$WcHeaderforStudent1$WUCStudentIdea1$rdStatus" value="N" checked="checked" /><label for="ctl00_WcHeaderforStudent1_WUCStudentIdea1_rdStatus_0">None</label></span></td><td><span><input id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_rdStatus_1" type="radio" name="ctl00$WcHeaderforStudent1$WUCStudentIdea1$rdStatus" value="S" /><label for="ctl00_WcHeaderforStudent1_WUCStudentIdea1_rdStatus_1">Peer</label></span></td>
+		</tr><tr>
+			<td><span><input id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_rdStatus_2" type="radio" name="ctl00$WcHeaderforStudent1$WUCStudentIdea1$rdStatus" value="E" /><label for="ctl00_WcHeaderforStudent1_WUCStudentIdea1_rdStatus_2">External</label></span></td><td><span><input id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_rdStatus_3" type="radio" name="ctl00$WcHeaderforStudent1$WUCStudentIdea1$rdStatus" value="I" /><label for="ctl00_WcHeaderforStudent1_WUCStudentIdea1_rdStatus_3">Internal</label></span></td>
+		</tr>
+	</table>
+                        
+</div>
+                </td>
+            </tr>
+            <tr id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_RowSupervisorLabel" style="display:none">
+	<td align="left">
+                    <span id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_Label21" class="aspLabel">Supervisour Detail:</span>
+                </td>
+</tr>
+
+            <tr id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_RowSupervisorDetail" style="display:none">
+	<td align="left">
+                    <input name="ctl00$WcHeaderforStudent1$WUCStudentIdea1$txtSupervisourDetail" type="text" id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_txtSupervisourDetail" class="aspTextBox" />
+                    <input type="hidden" name="ctl00$WcHeaderforStudent1$WUCStudentIdea1$TextBoxWatermarkExtender3_ClientState" id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_TextBoxWatermarkExtender3_ClientState" />
+                </td>
+</tr>
+          
+            <tr>
+                <td>
+                    <strong>Attach a Idea proposal (If Any)</strong>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="file" name="ctl00$WcHeaderforStudent1$WUCStudentIdea1$fuAttachementforidea" id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_fuAttachementforidea" class="aspFileUpload" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" name="ctl00$WcHeaderforStudent1$WUCStudentIdea1$btnSubmit" value="Submit" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$WcHeaderforStudent1$WUCStudentIdea1$btnSubmit&quot;, &quot;&quot;, true, &quot;idea&quot;, &quot;&quot;, false, false))" id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_btnSubmit" class="aspButton" />
+                </td>
+            </tr>
+             <tr>
+                <td>
+                    <span id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_lblDisclaimer" class="aspLabel">Disclaimer:- The Ideas recieved from students <br/> will be screened by a committee and the <br/> best Ideas will be supported for their <br/> implementation</span>
+                </td>
+            </tr>
+        </table>
+        <a href="#" id="ctl00_WcHeaderforStudent1_WUCStudentIdea1_feedbackbutton1" class="red pull_feedback" onclick="tooglefeedback2();" title="Click to leave feedback"></a>
+    </div>
+</div>
+<script type="text/javascript">
+    var isopen = false;
+    function tooglefeedback2() {
+
+        if (!isopen) {
+            
+            $("#idea").animate({ left: "0px" });
+            isopen = true;
+        }
+        else {
+            
+            $("#idea").animate({ left: "-289px" });
+            isopen = false;
+        }
+
+    }
+    function selectValue() {
+        //alert("Hello");
+
+        if (document.getElementById("ctl00_WcHeaderforStudent1_WUCStudentIdea1_rdStatus_1").checked == true) {
+
+
+            var textboxWaterMark = $find("WaterMark");
+            textboxWaterMark.set_WatermarkText('Name of Internal/External Student Mentor.');
+
+            //alert("Hello");ctl00_WcHeaderforStudent1_WUCStudentIdea1_Label21
+            //document.getElementById("ctl00_WcHeaderforStudent1_WUCStudentIdea1_RowSupervisorLabel").visible = true;
+            $("#ctl00_WcHeaderforStudent1_WUCStudentIdea1_RowSupervisorLabel").show(10);
+            $("#ctl00_WcHeaderforStudent1_WUCStudentIdea1_RowSupervisorDetail").show(10);
+
+        }
+        if (document.getElementById("ctl00_WcHeaderforStudent1_WUCStudentIdea1_rdStatus_2").checked == true) {
+
+            var textboxWaterMark = $find("WaterMark");
+            textboxWaterMark.set_WatermarkText('Name of External Resource Person.');
+            //alert("Hello");ctl00_WcHeaderforStudent1_WUCStudentIdea1_Label21
+            //document.getElementById("ctl00_WcHeaderforStudent1_WUCStudentIdea1_RowSupervisorLabel").visible = true;
+            $("#ctl00_WcHeaderforStudent1_WUCStudentIdea1_RowSupervisorLabel").show(10);
+            $("#ctl00_WcHeaderforStudent1_WUCStudentIdea1_RowSupervisorDetail").show(10);
+
+        }
+        if (document.getElementById("ctl00_WcHeaderforStudent1_WUCStudentIdea1_rdStatus_3").checked == true) {
+
+            var textboxWaterMark = $find("WaterMark");
+            textboxWaterMark.set_WatermarkText('Name of Internal Staff Person.');
+            //alert("Hello");ctl00_WcHeaderforStudent1_WUCStudentIdea1_Label21
+            //document.getElementById("ctl00_WcHeaderforStudent1_WUCStudentIdea1_RowSupervisorLabel").visible = true;
+            $("#ctl00_WcHeaderforStudent1_WUCStudentIdea1_RowSupervisorLabel").show(10);
+            $("#ctl00_WcHeaderforStudent1_WUCStudentIdea1_RowSupervisorDetail").show(10);
+
+        }
+        if (document.getElementById("ctl00_WcHeaderforStudent1_WUCStudentIdea1_rdStatus_0").checked == true) {
+            //alert("Hello");
+            //document.getElementById("ctl00_WcHeaderforStudent1_WUCStudentIdea1_RowSupervisorLabel").visible=false;
+            $("#ctl00_WcHeaderforStudent1_WUCStudentIdea1_RowSupervisorLabel").hide(10);
+            $("#ctl00_WcHeaderforStudent1_WUCStudentIdea1_RowSupervisorDetail").hide(10);
+
+        }
+    }
+</script>
+
+
+
+                    <div id="middle">
+                        <div class="homepage">
+                            
+    <table id="Main Table" align="center" width="100%" style="padding: 25px;">
+        <tr>
+            <td>
+                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                        <td align="center" class="listing_header">
+                            <span style="font-size: 16pt">Student Marks View</span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class = "input_form_caption_td" >
+            <table id="ctl00_cphHeading_tbMain" width="100%">
+	<tr>
+		<td>
+                        <table id="pnltable" width="100%">
+                            <tr>
+                                <td width="20%">
+                                </td>
+                                <td width="30%" style="height: 21px; text-align: center">
+                                    &nbsp;
+                                </td>
+                                <td width="30%">
+                                    &nbsp;
+                                </td>
+                                <td width="20%">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right">
+                                </td>
+                                <td style="text-align: center" colspan="2">
+                                    <div id="ctl00_cphHeading_rdTerm" class="RadComboBox RadComboBox_Default" style="width:160px;">
+			<table summary="combobox" style="border-width:0;border-collapse:collapse;">
+				<tr class="rcbReadOnly">
+					<td class="rcbInputCell rcbInputCellLeft" style="width:100%;"><input name="ctl00$cphHeading$rdTerm" type="text" class="rcbInput radPreventDecorate" id="ctl00_cphHeading_rdTerm_Input" value="217181" readonly="readonly" /></td><td class="rcbArrowCell rcbArrowCellRight"><a id="ctl00_cphHeading_rdTerm_Arrow" style="overflow: hidden;display: block;position: relative;outline: none;">select</a></td>
+				</tr>
+			</table><div class="rcbSlide" style="z-index:6000;display:none;"><div id="ctl00_cphHeading_rdTerm_DropDown" class="RadComboBoxDropDown RadComboBoxDropDown_Default "><div class="rcbScroll rcbWidth"><ul class="rcbList" style="list-style:none;margin:0;padding:0;zoom:1;"><li class="rcbItem">--  Select Term --</li><li class="rcbItem">116171</li><li class="rcbItem">116172</li><li class="rcbItem">217181</li></ul></div></div></div><input id="ctl00_cphHeading_rdTerm_ClientState" name="ctl00_cphHeading_rdTerm_ClientState" type="hidden" />
+		</div>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td style="text-align: center; height: 27px;">
+                                    &nbsp;
+                                </td>
+                                <td>
+                                    &nbsp;
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+	</tr>
+	<tr>
+		<td>
+                        <div id="ctl00_cphHeading_UpdatePanel1">
+			
+                                <div id="ctl00_cphHeading_RdMarksDetail" class="RadGrid RadGrid_Sunset" style="color:Black;background-color:White;border-color:#E0E0E0;border-width:1px;border-style:Solid;width:100%;">
+
+			<table class="rgMasterTable" id="ctl00_cphHeading_RdMarksDetail_ctl00" style="width:100%;table-layout:auto;empty-cells:show;">
+				<colgroup>
+		<col style="display:none;" />
+		<col  />
+		<col  />
+		<col  />
+		<col  />
+		<col  />
+		<col  />
+	</colgroup>
+<thead>
+					<tr>
+						<th scope="col" class="rgHeader" style="font-weight:bold;display:none;text-align:center;">TermId</th><th scope="col" class="rgHeader" style="font-weight:bold;text-align:center;">Course</th><th scope="col" class="rgHeader" style="font-weight:bold;text-align:center;">Description</th><th scope="col" class="rgHeader" style="font-weight:bold;text-align:center;">MarksMax</th><th scope="col" class="rgHeader" style="font-weight:bold;text-align:center;">MarksObtd</th><th scope="col" class="rgHeader" style="font-weight:bold;text-align:center;">WeightMarksMax</th><th scope="col" class="rgHeader" style="font-weight:bold;text-align:center;">WMarksObtd</th>
+					</tr><tr class="rgFilterRow">
+						<td style="display:none;">&nbsp;</td><td style="white-space:nowrap;"><input name="ctl00$cphHeading$RdMarksDetail$ctl00$ctl02$ctl01$FilterTextBox_Course" type="text" size="10" id="ctl00_cphHeading_RdMarksDetail_ctl00_ctl02_ctl01_FilterTextBox_Course" class="aspTextBox" alt="Filter Course column" onkeypress="if((event.keyCode == 13)) return false;" /><input type="submit" name="ctl00$cphHeading$RdMarksDetail$ctl00$ctl02$ctl01$Filter_Course" value=" " onclick="$find(&quot;ctl00_cphHeading_RdMarksDetail&quot;)._showFilterMenu(&quot;ctl00_cphHeading_RdMarksDetail_ctl00&quot;, &quot;Course&quot;, event); return false;" id="ctl00_cphHeading_RdMarksDetail_ctl00_ctl02_ctl01_Filter_Course" title="Filter" class="aspButton" /></td><td style="white-space:nowrap;"><input name="ctl00$cphHeading$RdMarksDetail$ctl00$ctl02$ctl01$FilterTextBox_Description" type="text" size="10" id="ctl00_cphHeading_RdMarksDetail_ctl00_ctl02_ctl01_FilterTextBox_Description" class="aspTextBox" alt="Filter Description column" onkeypress="if((event.keyCode == 13)) return false;" /><input type="submit" name="ctl00$cphHeading$RdMarksDetail$ctl00$ctl02$ctl01$Filter_Description" value=" " onclick="$find(&quot;ctl00_cphHeading_RdMarksDetail&quot;)._showFilterMenu(&quot;ctl00_cphHeading_RdMarksDetail_ctl00&quot;, &quot;Description&quot;, event); return false;" id="ctl00_cphHeading_RdMarksDetail_ctl00_ctl02_ctl01_Filter_Description" title="Filter" class="aspButton" /></td><td style="white-space:nowrap;"><input name="ctl00$cphHeading$RdMarksDetail$ctl00$ctl02$ctl01$FilterTextBox_MarksMax" type="text" size="10" id="ctl00_cphHeading_RdMarksDetail_ctl00_ctl02_ctl01_FilterTextBox_MarksMax" class="aspTextBox" alt="Filter MarksMax column" onkeypress="if((event.keyCode == 13)) return false;" /><input type="submit" name="ctl00$cphHeading$RdMarksDetail$ctl00$ctl02$ctl01$Filter_MarksMax" value=" " onclick="$find(&quot;ctl00_cphHeading_RdMarksDetail&quot;)._showFilterMenu(&quot;ctl00_cphHeading_RdMarksDetail_ctl00&quot;, &quot;MarksMax&quot;, event); return false;" id="ctl00_cphHeading_RdMarksDetail_ctl00_ctl02_ctl01_Filter_MarksMax" title="Filter" class="aspButton" /></td><td style="white-space:nowrap;"><input name="ctl00$cphHeading$RdMarksDetail$ctl00$ctl02$ctl01$FilterTextBox_MarksObtd" type="text" size="10" id="ctl00_cphHeading_RdMarksDetail_ctl00_ctl02_ctl01_FilterTextBox_MarksObtd" class="aspTextBox" alt="Filter MarksObtd column" onkeypress="if((event.keyCode == 13)) return false;" /><input type="submit" name="ctl00$cphHeading$RdMarksDetail$ctl00$ctl02$ctl01$Filter_MarksObtd" value=" " onclick="$find(&quot;ctl00_cphHeading_RdMarksDetail&quot;)._showFilterMenu(&quot;ctl00_cphHeading_RdMarksDetail_ctl00&quot;, &quot;MarksObtd&quot;, event); return false;" id="ctl00_cphHeading_RdMarksDetail_ctl00_ctl02_ctl01_Filter_MarksObtd" title="Filter" class="aspButton" /></td><td style="white-space:nowrap;"><input name="ctl00$cphHeading$RdMarksDetail$ctl00$ctl02$ctl01$FilterTextBox_WeightMarksMax" type="text" size="10" id="ctl00_cphHeading_RdMarksDetail_ctl00_ctl02_ctl01_FilterTextBox_WeightMarksMax" class="aspTextBox" alt="Filter WeightMarksMax column" onkeypress="if((event.keyCode == 13)) return false;" /><input type="submit" name="ctl00$cphHeading$RdMarksDetail$ctl00$ctl02$ctl01$Filter_WeightMarksMax" value=" " onclick="$find(&quot;ctl00_cphHeading_RdMarksDetail&quot;)._showFilterMenu(&quot;ctl00_cphHeading_RdMarksDetail_ctl00&quot;, &quot;WeightMarksMax&quot;, event); return false;" id="ctl00_cphHeading_RdMarksDetail_ctl00_ctl02_ctl01_Filter_WeightMarksMax" title="Filter" class="aspButton" /></td><td style="white-space:nowrap;"><input name="ctl00$cphHeading$RdMarksDetail$ctl00$ctl02$ctl01$FilterTextBox_WMarksObtd" type="text" size="10" id="ctl00_cphHeading_RdMarksDetail_ctl00_ctl02_ctl01_FilterTextBox_WMarksObtd" class="aspTextBox" alt="Filter WMarksObtd column" onkeypress="if((event.keyCode == 13)) return false;" /><input type="submit" name="ctl00$cphHeading$RdMarksDetail$ctl00$ctl02$ctl01$Filter_WMarksObtd" value=" " onclick="$find(&quot;ctl00_cphHeading_RdMarksDetail&quot;)._showFilterMenu(&quot;ctl00_cphHeading_RdMarksDetail_ctl00&quot;, &quot;WMarksObtd&quot;, event); return false;" id="ctl00_cphHeading_RdMarksDetail_ctl00_ctl02_ctl01_Filter_WMarksObtd" title="Filter" class="aspButton" /></td>
+					</tr>
+				</thead><tbody>
+				<tr class="rgRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__0" style="color:Black;background-color:White;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    <span id="ctl00_cphHeading_RdMarksDetail_ctl00_ctl04_Label3" class="aspLabel">CSE205::DATA STRUCTURES AND ALGORITHMS</span>
+                                                </td><td>Continuous Assessment</td><td>100</td><td>Awaited</td><td>25</td><td>Awaited</td>
+				</tr><tr class="rgAltRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__1" style="color:Black;background-color:#EFEFEF;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    
+                                                </td><td>Theory End Term</td><td>70</td><td>Awaited</td><td>50</td><td>Awaited</td>
+				</tr><tr class="rgRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__2" style="color:Black;background-color:White;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    
+                                                </td><td>Attendance Marks</td><td>5</td><td>Awaited</td><td>5</td><td>Awaited</td>
+				</tr><tr class="rgAltRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__3" style="color:Black;background-color:#EFEFEF;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    
+                                                </td><td>Objective Type Mid Term</td><td>40</td><td>Awaited</td><td>20</td><td>Awaited</td>
+				</tr><tr class="rgRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__4" style="color:Black;background-color:White;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    <span id="ctl00_cphHeading_RdMarksDetail_ctl00_ctl12_Label3" class="aspLabel">CSE211::COMPUTER ORGANIZATION AND DESIGN</span>
+                                                </td><td>Continuous Assessment</td><td>100</td><td>Awaited</td><td>25</td><td>Awaited</td>
+				</tr><tr class="rgAltRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__5" style="color:Black;background-color:#EFEFEF;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    
+                                                </td><td>Theory Mid Term</td><td>40</td><td>Awaited</td><td>20</td><td>Awaited</td>
+				</tr><tr class="rgRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__6" style="color:Black;background-color:White;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    
+                                                </td><td>Theory End Term</td><td>70</td><td>Awaited</td><td>50</td><td>Awaited</td>
+				</tr><tr class="rgAltRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__7" style="color:Black;background-color:#EFEFEF;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    
+                                                </td><td>Attendance Marks</td><td>5</td><td>Awaited</td><td>5</td><td>Awaited</td>
+				</tr><tr class="rgRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__8" style="color:Black;background-color:White;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    <span id="ctl00_cphHeading_RdMarksDetail_ctl00_ctl20_Label3" class="aspLabel">CSE215::DATA STRUCTURES AND ALGORITHMS LABORATORY</span>
+                                                </td><td>Continuous Assessment</td><td>100</td><td>Awaited</td><td>45</td><td>Awaited</td>
+				</tr><tr class="rgAltRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__9" style="color:Black;background-color:#EFEFEF;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    
+                                                </td><td>Practical End Term</td><td>100</td><td>Awaited</td><td>50</td><td>Awaited</td>
+				</tr><tr class="rgRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__10" style="color:Black;background-color:White;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    
+                                                </td><td>Attendance Marks</td><td>5</td><td>Awaited</td><td>5</td><td>Awaited</td>
+				</tr><tr class="rgAltRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__11" style="color:Black;background-color:#EFEFEF;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    <span id="ctl00_cphHeading_RdMarksDetail_ctl00_ctl26_Label3" class="aspLabel">CSE320::SOFTWARE ENGINEERING</span>
+                                                </td><td>Continuous Assessment</td><td>100</td><td>Awaited</td><td>25</td><td>Awaited</td>
+				</tr><tr class="rgRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__12" style="color:Black;background-color:White;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    
+                                                </td><td>Theory Mid Term</td><td>40</td><td>Awaited</td><td>20</td><td>Awaited</td>
+				</tr><tr class="rgAltRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__13" style="color:Black;background-color:#EFEFEF;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    
+                                                </td><td>Theory End Term</td><td>70</td><td>Awaited</td><td>50</td><td>Awaited</td>
+				</tr><tr class="rgRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__14" style="color:Black;background-color:White;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    
+                                                </td><td>Attendance Marks</td><td>5</td><td>Awaited</td><td>5</td><td>Awaited</td>
+				</tr><tr class="rgAltRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__15" style="color:Black;background-color:#EFEFEF;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    <span id="ctl00_cphHeading_RdMarksDetail_ctl00_ctl34_Label3" class="aspLabel">INT208::COMPUTING PRACTICUM-I</span>
+                                                </td><td>Continuous Assessment</td><td>100</td><td>Awaited</td><td>45</td><td>Awaited</td>
+				</tr><tr class="rgRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__16" style="color:Black;background-color:White;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    
+                                                </td><td>Practical End Term</td><td>100</td><td>Awaited</td><td>50</td><td>Awaited</td>
+				</tr><tr class="rgAltRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__17" style="color:Black;background-color:#EFEFEF;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    
+                                                </td><td>Attendance Marks</td><td>5</td><td>Awaited</td><td>5</td><td>Awaited</td>
+				</tr><tr class="rgRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__18" style="color:Black;background-color:White;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    <span id="ctl00_cphHeading_RdMarksDetail_ctl00_ctl40_Label3" class="aspLabel">INT213::PYTHON PROGRAMMING</span>
+                                                </td><td>Continuous Assessment</td><td>100</td><td>Awaited</td><td>45</td><td>Awaited</td>
+				</tr><tr class="rgAltRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__19" style="color:Black;background-color:#EFEFEF;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    
+                                                </td><td>Theory End Term</td><td>70</td><td>Awaited</td><td>50</td><td>Awaited</td>
+				</tr><tr class="rgRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__20" style="color:Black;background-color:White;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    
+                                                </td><td>Attendance Marks</td><td>5</td><td>Awaited</td><td>5</td><td>Awaited</td>
+				</tr><tr class="rgAltRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__21" style="color:Black;background-color:#EFEFEF;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    <span id="ctl00_cphHeading_RdMarksDetail_ctl00_ctl46_Label3" class="aspLabel">INT306::DATABASE MANAGEMENT SYSTEMS</span>
+                                                </td><td>Continuous Assessment</td><td>100</td><td>Awaited</td><td>25</td><td>Awaited</td>
+				</tr><tr class="rgRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__22" style="color:Black;background-color:White;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    
+                                                </td><td>Theory End Term</td><td>70</td><td>Awaited</td><td>50</td><td>Awaited</td>
+				</tr><tr class="rgAltRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__23" style="color:Black;background-color:#EFEFEF;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    
+                                                </td><td>Attendance Marks</td><td>5</td><td>Awaited</td><td>5</td><td>Awaited</td>
+				</tr><tr class="rgRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__24" style="color:Black;background-color:White;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    
+                                                </td><td>Objective Type Mid Term</td><td>40</td><td>37</td><td>20</td><td>19</td>
+				</tr><tr class="rgAltRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__25" style="color:Black;background-color:#EFEFEF;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    <span id="ctl00_cphHeading_RdMarksDetail_ctl00_ctl54_Label3" class="aspLabel">MTH401::DISCRETE MATHEMATICS</span>
+                                                </td><td>Continuous Assessment</td><td>100</td><td>Awaited</td><td>25</td><td>Awaited</td>
+				</tr><tr class="rgRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__26" style="color:Black;background-color:White;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    
+                                                </td><td>Theory End Term</td><td>70</td><td>Awaited</td><td>50</td><td>Awaited</td>
+				</tr><tr class="rgAltRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__27" style="color:Black;background-color:#EFEFEF;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    
+                                                </td><td>Attendance Marks</td><td>5</td><td>Awaited</td><td>5</td><td>Awaited</td>
+				</tr><tr class="rgRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__28" style="color:Black;background-color:White;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    
+                                                </td><td>Objective Type Mid Term</td><td>40</td><td>Awaited</td><td>20</td><td>Awaited</td>
+				</tr><tr class="rgAltRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__29" style="color:Black;background-color:#EFEFEF;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    <span id="ctl00_cphHeading_RdMarksDetail_ctl00_ctl62_Label3" class="aspLabel">PES314::SOFT SKILLS-I</span>
+                                                </td><td>Continuous Assessment</td><td>100</td><td>Awaited</td><td>30</td><td>Awaited</td>
+				</tr><tr class="rgRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__30" style="color:Black;background-color:White;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    
+                                                </td><td>Practical End Term</td><td>100</td><td>Awaited</td><td>55</td><td>Awaited</td>
+				</tr><tr class="rgAltRow" id="ctl00_cphHeading_RdMarksDetail_ctl00__31" style="color:Black;background-color:#EFEFEF;font-family:Trebuchet MS,Arial,Helvetica,Sans-Serif;font-size:10pt;text-align:left;">
+					<td style="display:none;">&nbsp;</td><td>
+                                                    
+                                                </td><td>Attendance Marks</td><td>5</td><td>Awaited</td><td>15</td><td>Awaited</td>
+				</tr>
+				</tbody>
+
+			</table><div id="ctl00_cphHeading_RdMarksDetail_SharedCalendarContainer" style="display:none;">
+
+			</div><div id="ctl00_cphHeading_RdMarksDetail_rfltMenu">
+				<div class="RadMenu RadMenu_Sunset RadMenu_Context RadMenu_Sunset_Context">
+					<ul class="rmActive rmVertical rmGroup rmLevel1">
+						<li class="rmItem rmFirst"><a class="rmLink" href="#"><span class="rmText">NoFilter</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Contains</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">DoesNotContain</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">StartsWith</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">EndsWith</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">EqualTo</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">NotEqualTo</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">GreaterThan</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">LessThan</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">GreaterThanOrEqualTo</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">LessThanOrEqualTo</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">Between</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">NotBetween</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">IsEmpty</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">NotIsEmpty</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">IsNull</span></a></li><li class="rmItem "><a class="rmLink" href="#"><span class="rmText">NotIsNull</span></a></li><li class="rmItem rmLast"><a class="rmLink" href="#"><span class="rmText">Custom</span></a></li>
+					</ul>
+				</div><input id="ctl00_cphHeading_RdMarksDetail_rfltMenu_ClientState" name="ctl00_cphHeading_RdMarksDetail_rfltMenu_ClientState" type="hidden" />
+			</div><input id="ctl00_cphHeading_RdMarksDetail_ClientState" name="ctl00_cphHeading_RdMarksDetail_ClientState" type="hidden" />	</div>
+			
+                            
+		</div>
+                    </td>
+	</tr>
+	<tr>
+		<td style="text-align: center;">
+                    </td>
+	</tr>
+	<tr>
+		<td style="text-align: center">
+                        &nbsp;
+                    </td>
+	</tr>
+</table>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td class = "input_form_caption_td">
+                
+            </td>
+        </tr>
+    </table>
+
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+              <input type="hidden" id="hrdMaximunTime" />
+        <input type="hidden" id="hrdIsUMSBlocked" />
+          <div id="divTesting" class="dialog-height" style="display:none">
+          
+             <div id="divUMSBlock" style="font-weight:bold;text-align:center;width:100%"> Your UMS is blocked due to following reasons</div>
+         <div id="divMessage"  style="max-height:400px;overflow:scroll" >
+
+          
+            </div>
+             <div  style="text-align: center"><input type="checkbox" id="chkReadMessage" /> I have read this information <input type="button" title="Click to confirm" value="Confirm" type="button" value="Ok" id="btnClose" /></div>
+             
+            </div>
+
+        </div>
+        
+        
+
+        
+
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("ctl00_WcHeaderforStudent1_WUCStudentIdea1_vd1"));
+var Page_Validators =  new Array(document.getElementById("ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator1"), document.getElementById("ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator3"), document.getElementById("ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator2"), document.getElementById("ctl00_WcHeaderforStudent1_WUCStudentIdea1_regex1"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_WcHeaderforStudent1_WUCStudentIdea1_vd1 = document.all ? document.all["ctl00_WcHeaderforStudent1_WUCStudentIdea1_vd1"] : document.getElementById("ctl00_WcHeaderforStudent1_WUCStudentIdea1_vd1");
+ctl00_WcHeaderforStudent1_WUCStudentIdea1_vd1.showmessagebox = "True";
+ctl00_WcHeaderforStudent1_WUCStudentIdea1_vd1.showsummary = "False";
+ctl00_WcHeaderforStudent1_WUCStudentIdea1_vd1.validationGroup = "idea";
+var ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator1 = document.all ? document.all["ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator1"] : document.getElementById("ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator1");
+ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator1.controltovalidate = "ctl00_WcHeaderforStudent1_WUCStudentIdea1_txtProject";
+ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator1.errormessage = "Please enter the idea";
+ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator1.validationGroup = "idea";
+ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator1.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator1.initialvalue = "";
+var ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator3 = document.all ? document.all["ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator3"] : document.getElementById("ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator3");
+ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator3.controltovalidate = "ctl00_WcHeaderforStudent1_WUCStudentIdea1_ddlAim";
+ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator3.errormessage = "Please enter the idea";
+ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator3.validationGroup = "idea";
+ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator3.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator3.initialvalue = "Select aim";
+var ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator2 = document.all ? document.all["ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator2"] : document.getElementById("ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator2");
+ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator2.controltovalidate = "ctl00_WcHeaderforStudent1_WUCStudentIdea1_txtDescription";
+ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator2.errormessage = "Please enter description";
+ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator2.display = "Dynamic";
+ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator2.validationGroup = "idea";
+ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator2.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator2.initialvalue = "";
+var ctl00_WcHeaderforStudent1_WUCStudentIdea1_regex1 = document.all ? document.all["ctl00_WcHeaderforStudent1_WUCStudentIdea1_regex1"] : document.getElementById("ctl00_WcHeaderforStudent1_WUCStudentIdea1_regex1");
+ctl00_WcHeaderforStudent1_WUCStudentIdea1_regex1.controltovalidate = "ctl00_WcHeaderforStudent1_WUCStudentIdea1_txtDescription";
+ctl00_WcHeaderforStudent1_WUCStudentIdea1_regex1.errormessage = "Text Too Long";
+ctl00_WcHeaderforStudent1_WUCStudentIdea1_regex1.display = "Dynamic";
+ctl00_WcHeaderforStudent1_WUCStudentIdea1_regex1.validationGroup = "idea";
+ctl00_WcHeaderforStudent1_WUCStudentIdea1_regex1.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+ctl00_WcHeaderforStudent1_WUCStudentIdea1_regex1.validationexpression = "(\\s|.){0,1000}$";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+(function(id) {
+    var e = document.getElementById(id);
+    if (e) {
+        e.dispose = function() {
+            Array.remove(Page_ValidationSummaries, document.getElementById(id));
+        }
+        e = null;
+    }
+})('ctl00_WcHeaderforStudent1_WUCStudentIdea1_vd1');
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":null,"displayAfter":100,"dynamicLayout":true}, null, null, $get("ctl00_WcHeaderforStudent1_UpdateProgress1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadMenu, {"_childListElementCssClass":null,"_skin":"Default","attributes":{},"clientStateFieldID":"ctl00_WcHeaderforStudent1_radStudentMenu_ClientState","collapseAnimation":"{\"type\":12,\"duration\":200}","enableAutoScroll":true,"enableRootItemScroll":true,"expandAnimation":"{\"duration\":450}","itemData":[{"items":[{"items":[{"navigateUrl":"frmCentralMailReceived.aspx"},{"navigateUrl":"frmCentralMailTracking.aspx"}]},{"items":[{"items":[{"navigateUrl":"frmStudentBacklogEntry.aspx"}]},{"navigateUrl":"frmExternalCertificates.aspx"},{"navigateUrl":"frmStudentExamAttendanceDisplay.aspx"},{"navigateUrl":"frmSeatingPlan.aspx"},{"navigateUrl":"frmDispalyOmrSheetlink.aspx"},{"navigateUrl":"frmStudentPaidTransaction.aspx"},{"navigateUrl":"frmProvisionalAdmitCard.aspx"},{"navigateUrl":"frmProvisionalDMCRequest.aspx"},{"items":[{"navigateUrl":"frmreappearfeereceipt.aspx"},{"navigateUrl":"frmExamRegisteration.aspx"},{"navigateUrl":"frmExamRegisterationAfterDate.aspx"}]},{"items":[{"navigateUrl":"frmSummerTermCoursePreference.aspx"},{"navigateUrl":"frmSummerTermDeregistration.aspx"},{"navigateUrl":"frmSummerTermRegisteration.aspx"}]}]},{"items":[{"navigateUrl":"frmStudentSurveyForScheme.aspx"},{"navigateUrl":"frmStudentSurvey.aspx"},{"navigateUrl":"frmGuestLectureStudentFeedbackMaster.aspx"},{"navigateUrl":"frmSurveyTerms.aspx"}]},{"items":[{"navigateUrl":"frmStudentBankInformation.aspx"},{"navigateUrl":"frmStudentAccountsCertificates.aspx"},{"navigateUrl":"~/Static Information/SCHOALR CARDICAH CARD.pdf"},{"navigateUrl":"frmDepositFeeDetail.aspx"},{"navigateUrl":"~/Static Information/FEE_DEPOSIT_GUIDELINE2017.rar"},{"navigateUrl":"~/Reports/frmStudentFeeSlip.aspx"},{"navigateUrl":"~/Reports/frmStudentFeeReceipt.aspx"},{"items":[{"navigateUrl":"~/Static Information/FEE_Notification_INR2017.rar"},{"navigateUrl":"~/Static Information/FEE_Notification_USD2017.rar"}]},{"navigateUrl":"~/Static Information/INFORMATION BROCHURE..pdf"},{"navigateUrl":"~/Reports/frmStatementofAccounts.aspx"},{"navigateUrl":"~/Static Information/ReimbursementUnderTakingnew.pdf"},{"navigateUrl":"frmAccountsRequestMaster.aspx"},{"navigateUrl":"frmStudentTokenAllotment.aspx"}]},{"items":[{"navigateUrl":"frmDoctorAppointmnt.aspx"}]},{"items":[{"navigateUrl":"frmCourseSyllabus.aspx"},{"items":[{"navigateUrl":"frmstudentdownloadassignment.aspx"},{"navigateUrl":"frmstudentassignmentupload.aspx"}]},{"navigateUrl":"frmCRQuestionnaire.aspx"},{"navigateUrl":"frmStudentEventsDutyLeave.aspx"},{"navigateUrl":"frmCourseIp.aspx"},{"navigateUrl":"frmCourseLm.aspx"},{"navigateUrl":"http://172.19.2.6:8580/webopac/html/searchform"},{"navigateUrl":"frmViewStudentMakeupAdjusment.aspx"},{"items":[{"navigateUrl":"frmMinorElectivePolling.aspx"},{"navigateUrl":"frmApplicableMinorElective.aspx"}]},{"navigateUrl":"frmMinorAreaPrefrence.aspx"},{"navigateUrl":"frmOESSECoursePrefrence.aspx"},{"navigateUrl":"frmOeRegistration.aspx"},{"items":[{"navigateUrl":"frmStudentUploadPractical.aspx"}]},{"navigateUrl":"~/Reports/frmSchemeReportforInternalCirculation.aspx"},{"items":[{"navigateUrl":"frmCapStudentListfaculty.aspx"}]},{"navigateUrl":"frmCapstoneStudentAttendanceView.aspx"},{"navigateUrl":"frmCapstoneStudentViewMarks.aspx"},{"navigateUrl":"frmStudentDutyDetail.aspx"},{"navigateUrl":"frmStudentCreditTransferUndertaking.aspx"},{"navigateUrl":"frmStudentTrainingExitContinueOptions.aspx"},{"navigateUrl":"frmStudentUploadCapstoneProject.aspx"},{"navigateUrl":"~/Reports/rptCourseWiseStudentAttendance.aspx"},{"items":[{"navigateUrl":"frmStudentResultDisplay.aspx"},{"navigateUrl":"frmMarksView.aspx"}]},{"navigateUrl":"~/Reports/frmStudentTimeTable.aspx"}]},{"items":[{"navigateUrl":"frmStudentPDFView.aspx"},{"navigateUrl":"http://112.196.62.20/login"},{"navigateUrl":"http://172.19.2.6:8580/webopac/html/searchform"}]},{"items":[{"navigateUrl":"frmStudentProfileUpdate.aspx"}]},{"navigateUrl":"http://lpuonline.in/eduonline"},{"items":[{"navigateUrl":"frmPlacementStudentShare.aspx"},{"navigateUrl":"frmStudentSessionRegistration.aspx"},{"navigateUrl":"frmPlacementPortalRegistration.aspx"},{"navigateUrl":"frmPlacementHome.aspx"},{"items":[{"navigateUrl":"frmStudentPlacmentIQBankAdd.aspx"},{"navigateUrl":"frmStudentPlacmentIQBank.aspx"}]},{"items":[{"navigateUrl":"~/Static Information/SPCPolicy.pdf"}]},{"navigateUrl":"frmSummerInternshipRegistration.aspx"}]},{"navigateUrl":"frmPressReleaseRequestByStudent.aspx"},{"items":[{"navigateUrl":"frmMtsMessage.aspx"},{"navigateUrl":"frmMtsUserHome.aspx"}]},{"items":[{"navigateUrl":"frmResearchAnnualSeminarRegister.aspx"},{"navigateUrl":"frmResearchDipStudent.aspx"},{"items":[{}]},{"navigateUrl":"frmResearchSotaRegister.aspx"}]},{"items":[{"navigateUrl":"frmHostelCloakRoomApplication.aspx"},{"navigateUrl":"frmHostelConfiscationItemAcknowledgement.aspx"},{"navigateUrl":"frmStudentHostelLeaveApplication.aspx"},{"navigateUrl":"frmHostelMailAcknowledgeByStudent.aspx"},{"items":[{"navigateUrl":"frmNoFood.aspx"},{"navigateUrl":"frmLostCardRequest.aspx"}]},{"navigateUrl":"frmInternationalStudentsResidence.aspx"},{"items":[{"navigateUrl":"frmHostelPollingRefundForm.aspx"},{"navigateUrl":"frmStudentHostelChangeFoodPeriod.aspx"},{"navigateUrl":"frmHostelSwap.aspx"},{"navigateUrl":"frmHostelSeaterChangePreference.aspx"},{"navigateUrl":"frmStudentHostelBookingWaitList.aspx"},{"navigateUrl":"frmStudentHostelBooking.aspx"},{"navigateUrl":"frmHostelPollingAfterBooking.aspx"},{"navigateUrl":"frmHostelPreferenceForPEP.aspx"},{"navigateUrl":"frmMakeICashPaymentForHostelPolling.aspx"},{"navigateUrl":"frmSummerTermHostelBooking.aspx"}]},{"items":[{"navigateUrl":"frmVehicleTracker.aspx"},{"navigateUrl":"frmStudentTransportPreference.aspx"}]},{"navigateUrl":"frmHostelDeallocationActionTakenByStudent.aspx"},{"navigateUrl":"frmCampusItemSearch.aspx"}]},{"items":[{"navigateUrl":"frmVisitorGatePassStudentRequest.aspx"},{"navigateUrl":"frmStudentRFIDPassFormWithICash.aspx"}]},{"items":[{"navigateUrl":"frmStudentClubRegisteration.aspx"},{"navigateUrl":"frmSportsClubStudentAttendance.aspx"},{"navigateUrl":"frmdlStudentEventRegister.aspx"},{"navigateUrl":"frmDSAStudentsEventRegistration.aspx"},{"navigateUrl":"frmStudentRegisterPartTimejobReport.aspx"},{"navigateUrl":"frmDSAStudentPolicyView.aspx"}]}]},{"items":[{"items":[{"navigateUrl":"~/Static Information/Academic calender/Academic_Calendar_for_Autumn_Term_of_Academic_Session_2017-18_for_B._Pharmacy_and_M_Pharmacy_Programmes.pdf"},{"navigateUrl":"~/Static Information/Academic calender/AcademicCalendars-FullTimeProgrammesforAutumnTermSession1718.pdf"},{"navigateUrl":"~/Static Information/Academic calender/Academic_Calendars_for_all_Full_Time_Programmes_offered_in_School_of_BPT_and_MPT_for_Autumn_Term_(Session_2017-18).pdf"},{"navigateUrl":"~/Static Information/Academic calender/Academic_Calendars_for_all_Full_Time_Programmes_offered_in_School_of_Agriculture_for_Autumn_Term_(2017-18).pdf"},{"navigateUrl":"~/Static Information/Academic calender/AcademicCalendarsFullTimeProgrammesofferedinSchoolofEducationforAutumnTerm(Session201718).pdf"},{"navigateUrl":"~/Static Information/Academic calender/Academic_Calendars_For_all_Full_Time_Programmes_offered_in_School_of_Physical_Education_for_Autumn_Term_(Session_2017-18).pdf"},{"navigateUrl":"~/Static Information/AC_MASTERSOFPHYSIOTHERAPY16161.pdf"},{"navigateUrl":"~/Static Information/Academic calender/Academic_Calendars_for_all_Part_Time_Programmes_for_Autumn_Term_(Session_2017-18).pdf"}]},{"navigateUrl":"frmDuplicateIdCardApplicationForm.aspx"},{"navigateUrl":"frmTurnStileAppointmentDetails.aspx"},{"items":[{"navigateUrl":"~/Static Information/CSE/SCSE Induction Presentation 2016-Day1-1Aug.pdf"},{"navigateUrl":"~/Static Information/CSE/SCSE Induction Presentation 2016-Day 2.pdf"},{"navigateUrl":"~/Static Information/CSE/Student Self Development Roadmap B.Tech CSEIT.pdf"}]},{"items":[{"navigateUrl":"~/Static Information\\External CA format for Internship.pdf"},{"navigateUrl":"~/Static Information/Guidelines_for_Inviting_External_Examiners_for_Dissertation_Evaluations_Excluding_M.Phil_PhD.pdf"},{"navigateUrl":"~/Static Information/Guidelines for Dissertation for Master Degree Programs Except for M.Phil. Programs Applicable to Academic Session 2014-15.pdf"},{"navigateUrl":"~/Static Information/Guidelines for Project Courses Including Capstone  For Academic Session 2014-15.pdf"},{"navigateUrl":"~/Static Information/Evaluation Guidelines and Timeline for Dessertation-I.pdf"}]},{"navigateUrl":"frmFormatsStudents.aspx"},{"navigateUrl":"~/Static Information/MTE ETE Examination Pattern.pdf"},{"navigateUrl":"~/Static Information/Academic calender/GUIDELINES FOR TAKING OPTION FROM STUDENTS ADMITTED IN DUAL DEGREE PROGRAMMES FOR CONTINUING OR DISCONTINUING THE PURSUANCE OF HIGHER DEGREE.pdf"},{"navigateUrl":"~/Static Information/Siteplan16.jpg"},{"navigateUrl":"~/Static Information/Interaction Timings with Higher Authorities.pdf"},{"navigateUrl":"frmLostAndFoundReport.aspx"},{"navigateUrl":"~/Static Information/DoctorList.htm"},{"navigateUrl":"frmstudentaccommodationdetails.aspx"},{"items":[{"items":[{"navigateUrl":"~/Static Information/Academic calender/An Extract of changes in rules w e f Session 2013-14.pdf"}]},{"items":[{"navigateUrl":"~/Policy/StudentFee/S.No. 5.pdf"},{"navigateUrl":"~/Policy/StudentFee/S.No. 6.pdf"}]},{"navigateUrl":"~/Static Information/Guidelines_for_Issuance_of_requipments_from_School of_Journalism_,Film_and_Creative_Arts.pdf"},{"navigateUrl":"~/Static Information/Library Policy.pdf"},{"navigateUrl":"~/Static Information/Policy for International Students.pdf"}]},{"navigateUrl":"frmGrievanceRequestMaster.aspx"}]},{"items":[{"navigateUrl":"frmchangepassword.aspx"},{"navigateUrl":"frmAdPassword.aspx"},{"navigateUrl":"SecretGridUMS.aspx"}]}]}, null, null, $get("ctl00_WcHeaderforStudent1_radStudentMenu"));
+});
+
+document.getElementById('ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator1'));
+}
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.TextBoxWatermarkBehavior, {"ClientStateFieldID":"ctl00_WcHeaderforStudent1_WUCStudentIdea1_TextBoxWatermarkExtender1_ClientState","id":"ctl00_WcHeaderforStudent1_WUCStudentIdea1_TextBoxWatermarkExtender1","watermarkText":"Enter title of the idea"}, null, null, $get("ctl00_WcHeaderforStudent1_WUCStudentIdea1_txtProject"));
+});
+
+document.getElementById('ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator3').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator3'));
+}
+
+document.getElementById('ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator2').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_WcHeaderforStudent1_WUCStudentIdea1_RequiredFieldValidator2'));
+}
+
+document.getElementById('ctl00_WcHeaderforStudent1_WUCStudentIdea1_regex1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_WcHeaderforStudent1_WUCStudentIdea1_regex1'));
+}
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.TextBoxWatermarkBehavior, {"ClientStateFieldID":"ctl00_WcHeaderforStudent1_WUCStudentIdea1_TextBoxWatermarkExtender2_ClientState","id":"ctl00_WcHeaderforStudent1_WUCStudentIdea1_TextBoxWatermarkExtender2","watermarkText":"Enter full description of the idea"}, null, null, $get("ctl00_WcHeaderforStudent1_WUCStudentIdea1_txtDescription"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.TextBoxWatermarkBehavior, {"ClientStateFieldID":"ctl00_WcHeaderforStudent1_WUCStudentIdea1_TextBoxWatermarkExtender3_ClientState","id":"WaterMark","watermarkText":"Expert can be Internal/External faculty"}, null, null, $get("ctl00_WcHeaderforStudent1_WUCStudentIdea1_txtSupervisourDetail"));
+});
+
+var callBackFrameUrl='/LpuUms/WebResource.axd?d=beToSAE3vdsL1QUQUxjWddGn5Lxcaol3Mk6_BgEhG18zqTT3MDlZdYaG4RrykQNLgSSDuy7HU42hGDpoL7oCfQ2&t=636396446620000000';
+WebForm_InitCallback();Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadComboBox, {"_dropDownWidth":0,"_height":0,"_postBackReference":"__doPostBack(\u0027ctl00$cphHeading$rdTerm\u0027,\u0027arguments\u0027)","_skin":"Default","_text":"217181","_uniqueId":"ctl00$cphHeading$rdTerm","_value":"217181","clientStateFieldID":"ctl00_cphHeading_rdTerm_ClientState","collapseAnimation":"{\"duration\":450}","expandAnimation":"{\"duration\":450}","itemData":[{"text":"--  Select Term --","value":"--  Select Term --"},{"value":"116171"},{"value":"116172"},{"value":"217181","selected":true}],"localization":"{\"AllItemsCheckedString\":\"All items checked\",\"ItemsCheckedString\":\"items checked\",\"CheckAllString\":\"Check All\"}","selectedIndex":3}, null, null, $get("ctl00_cphHeading_rdTerm"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadContextMenu, {"_childListElementCssClass":null,"_skin":"Sunset","clickToOpen":true,"clientStateFieldID":"ctl00_cphHeading_RdMarksDetail_rfltMenu_ClientState","collapseAnimation":"{\"duration\":450}","expandAnimation":"{\"duration\":450}","itemData":[{"attributes":{"columnUniqueName":"","tableID":""},"postBack":0,"value":"NoFilter"},{"attributes":{"columnUniqueName":"","tableID":""},"postBack":0,"value":"Contains"},{"attributes":{"columnUniqueName":"","tableID":""},"postBack":0,"value":"DoesNotContain"},{"attributes":{"columnUniqueName":"","tableID":""},"postBack":0,"value":"StartsWith"},{"attributes":{"columnUniqueName":"","tableID":""},"postBack":0,"value":"EndsWith"},{"attributes":{"columnUniqueName":"","tableID":""},"postBack":0,"value":"EqualTo"},{"attributes":{"columnUniqueName":"","tableID":""},"postBack":0,"value":"NotEqualTo"},{"attributes":{"columnUniqueName":"","tableID":""},"postBack":0,"value":"GreaterThan"},{"attributes":{"columnUniqueName":"","tableID":""},"postBack":0,"value":"LessThan"},{"attributes":{"columnUniqueName":"","tableID":""},"postBack":0,"value":"GreaterThanOrEqualTo"},{"attributes":{"columnUniqueName":"","tableID":""},"postBack":0,"value":"LessThanOrEqualTo"},{"attributes":{"columnUniqueName":"","tableID":""},"postBack":0,"value":"Between"},{"attributes":{"columnUniqueName":"","tableID":""},"postBack":0,"value":"NotBetween"},{"attributes":{"columnUniqueName":"","tableID":""},"postBack":0,"value":"IsEmpty"},{"attributes":{"columnUniqueName":"","tableID":""},"postBack":0,"value":"NotIsEmpty"},{"attributes":{"columnUniqueName":"","tableID":""},"postBack":0,"value":"IsNull"},{"attributes":{"columnUniqueName":"","tableID":""},"postBack":0,"value":"NotIsNull"},{"attributes":{"columnUniqueName":"","tableID":""},"postBack":0,"value":"Custom"}],"targets":[]}, null, null, $get("ctl00_cphHeading_RdMarksDetail_rfltMenu"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadGrid, {"ClientID":"ctl00_cphHeading_RdMarksDetail","ClientSettings":{"AllowAutoScrollOnDragDrop":true,"ShouldCreateRows":true,"DataBinding":{},"Selecting":{"CellSelectionMode":0,"AllowRowSelect":true,"EnableDragToSelectRows":true},"Scrolling":{},"Resizing":{},"ClientMessages":{},"KeyboardNavigationSettings":{"AllowActiveRowCycle":false,"EnableKeyboardShortcuts":true,"FocusKey":89,"InitInsertKey":73,"RebindKey":82,"ExitEditInsertModeKey":27,"UpdateInsertItemKey":13,"DeleteActiveRow":127,"ExpandDetailTableKey":39,"CollapseDetailTableKey":37,"SaveChangesKey":85,"CancelChangesKey":81},"Animation":{},"Virtualization":{}},"Skin":"Sunset","UniqueID":"ctl00$cphHeading$RdMarksDetail","_activeRowIndex":"","_controlToFocus":"","_currentPageIndex":0,"_defaultDateTimeFormat":"M/d/yyyy h:mm:ss tt","_editIndexes":"[]","_embeddedSkin":true,"_freezeText":"Freeze","_gridTableViewsData":"[{\"ClientID\":\"ctl00_cphHeading_RdMarksDetail_ctl00\",\"UniqueID\":\"ctl00$cphHeading$RdMarksDetail$ctl00\",\"PageSize\":10,\"PageCount\":1,\"EditMode\":\"EditForms\",\"AllowPaging\":false,\"CurrentPageIndex\":0,\"VirtualItemCount\":0,\"AllowMultiColumnSorting\":false,\"AllowNaturalSort\":true,\"AllowFilteringByColumn\":true,\"PageButtonCount\":10,\"HasDetailTables\":false,\"HasMultiHeaders\":false,\"CheckListWebServicePath\":\"\",\"GroupLoadMode\":\"Server\",\"PagerAlwaysVisible\":false,\"IsItemInserted\":false,\"clientDataKeyNames\":[],\"hasDetailItemTemplate\":false,\"_dataBindTemplates\":false,\"_selectedItemStyle\":\"\",\"_selectedItemStyleClass\":\"rgSelectedRow\",\"isFilterItemExpanded\":true,\"_columnsData\":[{\"UniqueName\":\"TermId\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridBoundColumn\",\"ColumnGroupName\":\"\",\"Editable\":true,\"DataTypeName\":\"System.String\",\"FilterListOptions\":0,\"CurrentFilterFunction\":0,\"CurrentFilterValue\":\"\",\"AndCurrnetFilterFunction\":0,\"AndCurrentFilterValue\":\"\",\"Acff\":\"Contains\",\"CurrentFilterFunctionName\":\"NoFilter\",\"AndCurrentFilterFunctionName\":\"NoFilter\",\"DataField\":\"TermId\",\"Display\":false},{\"UniqueName\":\"Course\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridTemplateColumn\",\"ColumnGroupName\":\"\",\"Editable\":false,\"DataTypeName\":\"System.String\",\"FilterListOptions\":0,\"CurrentFilterFunction\":0,\"CurrentFilterValue\":\"\",\"AndCurrnetFilterFunction\":0,\"AndCurrentFilterValue\":\"\",\"Acff\":\"Contains\",\"CurrentFilterFunctionName\":\"NoFilter\",\"AndCurrentFilterFunctionName\":\"NoFilter\",\"DataField\":\"\",\"Display\":true},{\"UniqueName\":\"Description\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridBoundColumn\",\"ColumnGroupName\":\"\",\"Editable\":true,\"DataTypeName\":\"System.String\",\"FilterListOptions\":0,\"CurrentFilterFunction\":0,\"CurrentFilterValue\":\"\",\"AndCurrnetFilterFunction\":0,\"AndCurrentFilterValue\":\"\",\"Acff\":\"Contains\",\"CurrentFilterFunctionName\":\"NoFilter\",\"AndCurrentFilterFunctionName\":\"NoFilter\",\"DataField\":\"Description\",\"Display\":true},{\"UniqueName\":\"MarksMax\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridBoundColumn\",\"ColumnGroupName\":\"\",\"Editable\":true,\"DataTypeName\":\"System.Int32\",\"FilterListOptions\":0,\"CurrentFilterFunction\":0,\"CurrentFilterValue\":\"\",\"AndCurrnetFilterFunction\":0,\"AndCurrentFilterValue\":\"\",\"Acff\":\"EqualTo\",\"CurrentFilterFunctionName\":\"NoFilter\",\"AndCurrentFilterFunctionName\":\"NoFilter\",\"DataField\":\"MarksMax\",\"Display\":true},{\"UniqueName\":\"MarksObtd\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridBoundColumn\",\"ColumnGroupName\":\"\",\"Editable\":true,\"DataTypeName\":\"System.String\",\"FilterListOptions\":0,\"CurrentFilterFunction\":0,\"CurrentFilterValue\":\"\",\"AndCurrnetFilterFunction\":0,\"AndCurrentFilterValue\":\"\",\"Acff\":\"Contains\",\"CurrentFilterFunctionName\":\"NoFilter\",\"AndCurrentFilterFunctionName\":\"NoFilter\",\"DataField\":\"MarksObtd\",\"Display\":true},{\"UniqueName\":\"WeightMarksMax\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridBoundColumn\",\"ColumnGroupName\":\"\",\"Editable\":true,\"DataTypeName\":\"System.Int32\",\"FilterListOptions\":0,\"CurrentFilterFunction\":0,\"CurrentFilterValue\":\"\",\"AndCurrnetFilterFunction\":0,\"AndCurrentFilterValue\":\"\",\"Acff\":\"EqualTo\",\"CurrentFilterFunctionName\":\"NoFilter\",\"AndCurrentFilterFunctionName\":\"NoFilter\",\"DataField\":\"WeightMarksMax\",\"Display\":true},{\"UniqueName\":\"WMarksObtd\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridBoundColumn\",\"ColumnGroupName\":\"\",\"Editable\":true,\"DataTypeName\":\"System.String\",\"FilterListOptions\":0,\"CurrentFilterFunction\":0,\"CurrentFilterValue\":\"\",\"AndCurrnetFilterFunction\":0,\"AndCurrentFilterValue\":\"\",\"Acff\":\"Contains\",\"CurrentFilterFunctionName\":\"NoFilter\",\"AndCurrentFilterFunctionName\":\"NoFilter\",\"DataField\":\"WMarksObtd\",\"Display\":true}]}]","_loadingText":"Loading...","_masterClientID":"ctl00_cphHeading_RdMarksDetail_ctl00","_readyText":"Ready","_shouldFocusOnPage":false,"_statusLabelID":"","_unfreezeText":"Unfreeze","allowMultiRowSelection":false,"clientStateFieldID":"ctl00_cphHeading_RdMarksDetail_ClientState","expandItems":{},"renderMode":1}, null, null, $get("ctl00_cphHeading_RdMarksDetail"));
+});
+//]]>
+</script>
+</form>
+
+       <script type="text/javascript">
+           var clearInt;
+           var totalMessages = 0;
+           var listofConfimationIDs = [];
+           //clearInt = setInterval(displayDialog, 5000);
+
+
+
+           function getUpdatedMessages() {
+               totalMessages = 0;
+               $('#divMessage').empty();
+               var UserID = '11603774';
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "WsEmployeeSearch.asmx/MessageDetails",
+                data: JSON.stringify({ EmpCode: UserID }),
+                dataType: "json",
+                success: function (data) {
+                    data=data.d;
+                    $('#hrdMaximunTime').val('0');
+                    var atttable = "<table  class='at-table' ><tbody>";
+
+                    var row = "";
+                    for (var i = 0; i < data.length; i++) {
+                        totalMessages += 1;
+                        $('#hrdMaximunTime').val(data[i].RepeatMessageAfterMiliSecond);
+                        listofConfimationIDs.push(data[i].ID);
+                        row = '<tr>';
+                        row += '<td style="vertical-align:top">' + data[i].SrNo + '</td>';
+                        row += '<td style="vertical-align:top">' + data[i].Description + '</td>';
+                        row += '</tr>';
+                        atttable += row;
+                    }
+
+                    atttable += '</tbody></table>';
+                    $('#divMessage').html(atttable);
+
+                    if ($('#hrdMaximunTime').val() > 0) {
+                        // displayDialog();
+                        clearInt = setInterval(displayDialog, $('#hrdMaximunTime').val());
+                    }
+                    else if (data.length > 0) {
+                        displayDialog();
+                    }
+                    else {
+
+                    }
+                }
+                             ,
+                error: function (result) {
+                    //alert("Error");
+                }
+            });
+        }
+
+        function displayDialog() {
+            clearInterval(clearInt);
+            if ($('#hrdIsUMSBlocked').val() == 'Yes')
+                $('#divUMSBlock').show('fast');
+            else
+                $('#divUMSBlock').hide('fast');
+
+            $("#divTesting").dialog
+                       ({
+                           title: "Important Information for you",
+                           width: 750,
+                           resizable: false,
+                           modal: true,
+                           closeOnEscape: false,
+                           dialogClass: 'no-close',
+                           draggable: false,
+                       });
+
+            $('#divTesting').prev('div').css({ 'color': 'white', 'background-color': 'red' });
+            var height = $('#divTesting').css('height');            //$('#ui-id-5').next('a').hide();
+
+            height = height.substr(0, height.length - 2);
+
+            if (height > 400) {
+                $('#divTesting').parent('div').css({ 'margin-top': '0px' });
+            }
+            else if (height > 300) {
+                $('#divTesting').parent('div').css({ 'margin-top': '0px' });
+            }
+            else if (height > 200) {
+                $('#divTesting').parent('div').css({ 'margin-top': '40px' });
+            }
+            else if (height > 150) {
+                $('#divTesting').parent('div').css({ 'margin-top': '60px' });
+            }
+            else if (height > 125) {
+                $('#divTesting').parent('div').css({ 'margin-top': '80px' });
+            }
+
+            else if (height > 100) {
+                $('#divTesting').parent('div').css({ 'margin-top': '100px' });
+            }
+
+            else {
+                $('#divTesting').parent('div').css({ 'margin-top': '150px' });
+            }
+        }
+
+
+
+        $(document).ready(function ()
+        {
+            $('#btnClose').attr('disabled', 'disabled');
+            $('#divUMSBlock').hide('fast');
+
+            $('#divTesting').hide();
+            var EmpCode = '11603774';
+
+            $('#divMessage').empty();
+            var UserID = '11603774';
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "WsEmployeeSearch.asmx/MessageDetails",
+                data: JSON.stringify({ EmpCode: UserID }),
+                dataType: "json",
+                success: function (data) {
+                    data = data.d;
+                    $('#hrdMaximunTime').val('0');
+                    var atttable = "<table  class='at-table' ><tbody>";
+
+                    var row = "";
+                    for (var i = 0; i < data.length; i++) {
+                        totalMessages += 1;
+
+                        if (data[i].IsBlocked == 'True') {
+                            $('#hrdIsUMSBlocked').val('Yes');
+
+                            $('#hrdMaximunTime').val(data[i].RepeatMessageAfterMiliSecond);
+                            listofConfimationIDs.push(data[i].ID);
+                            row = '<tr style="font-weight:bold">';
+                            row += '<td style="vertical-align:top">' + data[i].SrNo + '</td>';
+                            row += '<td style="vertical-align:top" >' + data[i].Description + '</td>';
+                            //row += '<td style="vertical-align:top" >' + data[i].IsBlocked + '</td>';
+                            row += '</tr>';
+                            atttable += row;
+                        }
+                        else {
+
+
+                            $('#hrdMaximunTime').val(data[i].RepeatMessageAfterMiliSecond);
+                            listofConfimationIDs.push(data[i].ID);
+                            row = '<tr>';
+                            row += '<td style="vertical-align:top">' + data[i].SrNo + '</td>';
+                            row += '<td style="vertical-align:top" >' + data[i].Description + '</td>';
+                            //row += '<td style="vertical-align:top" >' + data[i].IsBlocked + '</td>';
+                            row += '</tr>';
+                            atttable += row;
+                        }
+                    }
+
+                    atttable += '</tbody></table>';
+                    $('#divMessage').html(atttable);
+
+
+                    if (totalMessages > 0) {
+                        displayDialog();
+                    }
+                }
+                             ,
+                error: function (result) {
+                    //alert("Error");
+                }
+            });
+
+
+            $('#btnClose').click(function () {
+
+                var userID = '11603774';
+                    var ID = "";
+
+                    for (i = 0; i < listofConfimationIDs.length ; i++) {
+                        ID = listofConfimationIDs[i];
+                        $.ajax({
+                            type: "POST",
+                            contentType: "application/json; charset=utf-8",
+                            url: "WsEmployeeSearch.asmx/UpdateMessageDetails",
+                            data: JSON.stringify({ Id: ID, EmpCode: userID }),
+                            dataType: "json",
+                            success: function (data) {
+
+                            }
+                        });
+                    }
+
+
+
+                    $('#btnClose').removeClass('enableClosedialog');
+                    $('#btnClose').addClass('disableClosedialog');
+                    $("#chkReadMessage").attr('checked', false);
+                    $('#btnClose').attr('disabled', 'disabled');
+                    $("#divTesting").dialog('close');
+
+
+                    if ($('#hrdIsUMSBlocked').val() == 'Yes') {
+
+
+                        window.location.replace('https://ums.lpu.in/lpuums/loginnew.aspx');
+               
+                    }
+                    else {
+                        getUpdatedMessages();
+                    }
+                });
+
+
+            $('#chkReadMessage').click(function () {
+                if ($(this).is(':checked')) {
+                    $('#btnClose').removeAttr('disabled');
+                    $('#btnClose').removeClass('disableClosedialog');
+                    $('#btnClose').addClass('enableClosedialog');
+                }
+                else {
+                    $('#btnClose').attr('disabled', 'disabled');
+                    $('#btnClose').removeClass('enableClosedialog');
+                    $('#btnClose').addClass('disableClosedialog');
+                }
+            });
+        });
+
+
+
+    </script>
+
+</body>
+</html>
